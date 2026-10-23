@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://drgjcpixmqgwe"]
+
+[ext_resource type="Script" uid="uid://oe87e4dvbpft" path="res://cat/behaviors/hide_and_seek.gd" id="1_83xhc"]
+
+[node name="HideAndSeek" type="Node"]
+script = ExtResource("1_83xhc")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 135)
+collision_mask = 6
+hit_from_inside = true

@@ -7,6 +7,8 @@
 size = Vector2(480, 270)
 
 [node name="Room" type="Node2D" groups=["rooms"]]
+z_index = -16
+z_as_relative = false
 script = ExtResource("1_vlpcm")
 
 [node name="Background" type="Sprite2D" parent="."]
