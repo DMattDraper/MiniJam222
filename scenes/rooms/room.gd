@@ -33,8 +33,8 @@ func _on_body_exited(body: Node2D) -> void:
 
 func activate() -> void:
 	if cat_behavior != null:
-		cat_behavior.active = true
+		cat_behavior.activate()
 
 func deactivate() -> void:
 	if cat_behavior != null:
-		cat_behavior.active = false
+		cat_behavior.deactivate()
