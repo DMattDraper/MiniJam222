@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://km0xdn7hk1o3"]
+[gd_scene load_steps=4 format=3 uid="uid://km0xdn7hk1o3"]
 
 [ext_resource type="Script" uid="uid://buhunyb1bnaqs" path="res://scenes/rooms/room.gd" id="1_vlpcm"]
+[ext_resource type="AudioStream" uid="uid://cx4di8stvcnrw" path="res://cat/meow.wav" id="2_04jvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlpcm"]
 size = Vector2(480, 270)
 
 [node name="Room" type="Node2D" groups=["rooms"]]
 script = ExtResource("1_vlpcm")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -128
 
 [node name="CameraAnchor" type="Marker2D" parent="."]
 
@@ -15,6 +19,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoundingBox"]
 shape = SubResource("RectangleShape2D_vlpcm")
+
+[node name="Meow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_04jvg")
+volume_db = -6.0
 
 [connection signal="body_entered" from="BoundingBox" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="BoundingBox" to="." method="_on_body_exited"]

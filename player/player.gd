@@ -4,6 +4,9 @@ class_name Player extends CharacterBody2D
 
 var direction := 0.0
 
+func _ready() -> void:
+	Statics.player = self
+
 func _process(_delta: float) -> void:
 	direction = Input.get_axis("move_left", "move_right")
 	if Input.is_action_just_pressed("jump"):
