@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuwmkk78jyyvn"]
+
+[ext_resource type="Script" uid="uid://dm7dlfp6a1hj1" path="res://cat/cat.gd" id="1_vgj48"]
+
+[node name="Cat" type="Node"]
+script = ExtResource("1_vgj48")
