@@ -2,7 +2,6 @@ class_name Player extends CharacterBody2D
 
 @onready var player_mover : PlayerMover
 
-
 var direction := 0.0
 
 func _process(_delta: float) -> void:

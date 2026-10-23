@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://km0xdn7hk1o3"]
+
+[ext_resource type="Script" uid="uid://buhunyb1bnaqs" path="res://scenes/rooms/room.gd" id="1_vlpcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlpcm"]
+size = Vector2(480, 270)
+
+[node name="Room" type="Node2D" groups=["rooms"]]
+script = ExtResource("1_vlpcm")
+
+[node name="CameraAnchor" type="Marker2D" parent="."]
+
+[node name="BoundingBox" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundingBox"]
+shape = SubResource("RectangleShape2D_vlpcm")
+
+[connection signal="body_entered" from="BoundingBox" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="BoundingBox" to="." method="_on_body_exited"]
