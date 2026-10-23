@@ -29,8 +29,10 @@ func room_exited(room: Room) -> void:
 		change_room()
 
 func change_room() -> void:
+	current_room.deactivate()
 	current_room = next_room
 	next_room = null
+	current_room.activate()
 	
 	camera.global_position = current_room.camera_anchor.global_position
 

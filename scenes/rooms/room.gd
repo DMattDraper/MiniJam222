@@ -8,6 +8,8 @@ class_name Room extends Node2D
 @onready var camera_anchor: Marker2D = $CameraAnchor
 @onready var bounding_box: Area2D = $BoundingBox
 
+@onready var cat_behavior : Behavior
+
 @export var starting_room := false
 var is_cat_present := false
 
@@ -28,3 +30,11 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		room_exited.emit(self)
+
+func activate() -> void:
+	if cat_behavior != null:
+		cat_behavior.active = true
+
+func deactivate() -> void:
+	if cat_behavior != null:
+		cat_behavior.active = false
