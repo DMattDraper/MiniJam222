@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvh7v6502hlno"]
+
+[ext_resource type="Script" uid="uid://ideabudafyju" path="res://interactables/cauldron.gd" id="1_4s5cx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gndq0"]
+size = Vector2(32, 14)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gndq0"]
+
+[node name="Cauldron" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_4s5cx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_gndq0")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.147672, 0.147672, 0.147672, 1)
+z_index = -16
+position = Vector2(4.76837e-07, -7)
+scale = Vector2(32, 14)
+mesh = SubResource("QuadMesh_gndq0")
