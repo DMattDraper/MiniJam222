@@ -15,12 +15,15 @@ run/main_scene="uid://dcl0di4u8tyi5"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Statics="*res://managers/statics.gd"
+
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=270
 window/size/mode=2
-window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
 
