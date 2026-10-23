@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="1_8tnbd"]
 [ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="2_22icm"]
 [ext_resource type="Script" uid="uid://ciouekhiw2gmq" path="res://scenes/world.gd" id="2_lubul"]
-[ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://scenes/rooms/room.tscn" id="2_uchko"]
+[ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://Scenes/rooms/room.tscn" id="2_uchko"]
 [ext_resource type="PackedScene" uid="uid://cbugdx0hj2nv8" path="res://items/item.tscn" id="5_8x8ut"]
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="5_18wdw"]
 [ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="6_0hhq7"]
