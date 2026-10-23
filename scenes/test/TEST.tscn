@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcl0di4u8tyi5"]
+[gd_scene load_steps=19 format=3 uid="uid://dcl0di4u8tyi5"]
 
 [ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="1_8tnbd"]
 [ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="2_22icm"]
 [ext_resource type="Script" uid="uid://ciouekhiw2gmq" path="res://scenes/world.gd" id="2_lubul"]
 [ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://scenes/rooms/room.tscn" id="2_uchko"]
+[ext_resource type="PackedScene" uid="uid://cbugdx0hj2nv8" path="res://items/item.tscn" id="5_8x8ut"]
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="5_18wdw"]
+[ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="6_0hhq7"]
 [ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="6_e3ma8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tnbd"]
@@ -50,6 +52,7 @@ script = ExtResource("2_lubul")
 [node name="Camera2D" type="Camera2D" parent="World"]
 
 [node name="StartingRoom" parent="World" instance=ExtResource("2_uchko")]
+z_index = -16
 starting_room = true
 
 [node name="Floor" type="StaticBody2D" parent="World/StartingRoom"]
@@ -85,7 +88,14 @@ shape = SubResource("RectangleShape2D_22icm")
 modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_18wdw")
 
+[node name="Item" parent="World/StartingRoom" instance=ExtResource("5_8x8ut")]
+position = Vector2(-124, 0)
+
+[node name="Item2" parent="World/StartingRoom" instance=ExtResource("5_8x8ut")]
+position = Vector2(124, 0)
+
 [node name="LeftRoom" parent="World" instance=ExtResource("2_uchko")]
+z_index = -16
 position = Vector2(-480, 0)
 
 [node name="Wall" type="StaticBody2D" parent="World/LeftRoom"]
@@ -188,6 +198,7 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_e3ma8")
 
 [node name="TopLeftRoom" parent="World" instance=ExtResource("2_uchko")]
+z_index = -16
 position = Vector2(-480, -270)
 
 [node name="Wall" type="StaticBody2D" parent="World/TopLeftRoom"]
@@ -224,6 +235,7 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_e3ma8")
 
 [node name="RightRoom" parent="World" instance=ExtResource("2_uchko")]
+z_index = -16
 position = Vector2(480, 0)
 
 [node name="Wall" type="StaticBody2D" parent="World/RightRoom"]
@@ -259,7 +271,11 @@ shape = SubResource("RectangleShape2D_8tnbd")
 modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_8tnbd")
 
+[node name="Cauldron" parent="World/RightRoom" instance=ExtResource("6_0hhq7")]
+position = Vector2(0, 119)
+
 [node name="TopRoom" parent="World" instance=ExtResource("2_uchko")]
+z_index = -16
 position = Vector2(0, -270)
 
 [node name="Wall" type="StaticBody2D" parent="World/TopRoom"]
