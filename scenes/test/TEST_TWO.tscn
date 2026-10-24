@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://m18wa85hiyb4"]
+[gd_scene load_steps=23 format=3 uid="uid://m18wa85hiyb4"]
 
 [ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="1_uax3p"]
 [ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="2_ubqgd"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="7_3gt05"]
 [ext_resource type="PackedScene" uid="uid://bjf4yd37w5u1p" path="res://cat/behaviors/Pawing.tscn" id="7_ubqgd"]
 [ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="8_quq6g"]
+[ext_resource type="Script" uid="uid://cbq73f5yf14d5" path="res://ui/hud.gd" id="10_xgxbx"]
+[ext_resource type="Theme" uid="uid://bc3b833woaf0h" path="res://ui/hud_theme.tres" id="11_00i5c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tnbd"]
 size = Vector2(480, 16)
@@ -376,3 +378,52 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("8_quq6g")
 text = "Cat is WANDERING"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("10_xgxbx")
+
+[node name="MessageText" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -26.0
+offset_right = 57.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_00i5c")
+text = "Message goes here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionText" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = 2.0
+offset_right = 40.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_00i5c")
+text = "Press E to Do"
+vertical_alignment = 1
+
+[node name="CatText" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_right = 40.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("11_00i5c")
+text = "Cat Go Meow"
+horizontal_alignment = 1
+vertical_alignment = 1

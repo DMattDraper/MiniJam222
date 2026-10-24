@@ -10,11 +10,11 @@ size = Vector2(24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjkh3"]
 atlas = ExtResource("4_yw30f")
-region = Rect2(0, 0, 32, 64)
+region = Rect2(96, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yllr7"]
 atlas = ExtResource("4_yw30f")
-region = Rect2(32, 0, 32, 64)
+region = Rect2(224, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kb6p2"]
 atlas = ExtResource("4_yw30f")
@@ -140,7 +140,7 @@ script = ExtResource("1_oul6g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_g6k8r")
-animation = &"run_hold"
+animation = &"idle_hold"
 autoplay = "idle"
 
 [node name="ItemHolder" type="Node2D" parent="."]

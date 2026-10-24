@@ -4,23 +4,23 @@ var item_count := 0
 
 func interact(item: Item) -> bool:
 	if item == null:
-		print("No item to place in cauldron...")
+		Statics.hud.update_message_text("No item to add to cauldron...")
 		return false
 	
 	if !is_valid_type(item):
-		print("This item can't go in the cualdron...")
+		Statics.hud.update_message_text("This item can't go in the cauldron...")
 		return false
 	
 	if item.added_to_cauldron:
-		print("You don't need another one of these...")
+		Statics.hud.update_message_text("You don't need another one of these...")
 		return false
 	
-	print("Put %s into the cauldron!" % [item.name])
+	Statics.hud.update_message_text("Added %s to the cauldron!" % [item.item_name])
 	item.added_to_cauldron = true
 	item_count += 1
 	
 	if item_count == 5:
-		print("You win!")
+		Statics.hud.update_message_text("You win!")
 	
 	return true
 

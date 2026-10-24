@@ -16,7 +16,15 @@ func _process(_delta: float) -> void:
 	
 	if held_item != null:
 		held_item.global_position = lerp(held_item.global_position, global_position, 1.0)
-
+	
+	var target = ray.get_collider()
+	
+	if target != null and target is Interactable:
+		Statics.hud.update_interaction_text(target.interaction_message)
+	elif target != null and target is Item and held_item == null:
+		Statics.hud.update_interaction_text(target.interaction_message)
+	else:
+		Statics.hud.update_interaction_text("")
 func interact() -> void:
 	var target = ray.get_collider()
 	
@@ -34,6 +42,7 @@ func interact() -> void:
 
 func pickup(target: Item) -> void:
 	held_item = target
+	held_item.grab()
 	held_item.held = true
 	held_item.z_index += 1
 
