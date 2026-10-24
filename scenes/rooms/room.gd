@@ -30,6 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		room_exited.emit(self)
+		deactivate()
 
 func activate() -> void:
 	if cat_behavior != null:
