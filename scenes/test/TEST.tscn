@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dcl0di4u8tyi5"]
+[gd_scene load_steps=43 format=3 uid="uid://dcl0di4u8tyi5"]
 
 [ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="1_8tnbd"]
 [ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_xv13t"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ollr2236etb" path="res://environment/box.png" id="8_a0v8o"]
 [ext_resource type="PackedScene" uid="uid://qnclqcxq4uub" path="res://cat/behaviors/jump_scare.tscn" id="8_k4nwc"]
 [ext_resource type="PackedScene" uid="uid://cxvch7jovw5y8" path="res://items/eye_of_newt.tscn" id="8_tpt76"]
+[ext_resource type="PackedScene" uid="uid://bmofsuglnmjre" path="res://cat/behaviors/milk_distraction.tscn" id="9_bgt3b"]
 [ext_resource type="PackedScene" uid="uid://tpf0l0ebvm6q" path="res://items/orchid.tscn" id="11_asl1u"]
 [ext_resource type="PackedScene" uid="uid://byhnqxqrd8jd4" path="res://items/toadstool.tscn" id="13_um4pj"]
 [ext_resource type="PackedScene" uid="uid://drxcxmgmc8j24" path="res://mouse/mouse.tscn" id="14_eaojj"]
@@ -127,6 +128,8 @@ script = ExtResource("2_lubul")
 
 [node name="StartingRoom" parent="World" instance=ExtResource("2_uchko")]
 starting_room = true
+
+[node name="MilkDistraction" parent="World/StartingRoom" instance=ExtResource("9_bgt3b")]
 
 [node name="Floor" type="StaticBody2D" parent="World/StartingRoom"]
 position = Vector2(0, 127)
@@ -395,7 +398,6 @@ mesh = SubResource("QuadMesh_mt8ka")
 
 [node name="Mouse" parent="World/RightRoom" instance=ExtResource("14_eaojj")]
 position = Vector2(-240, 119)
-collision_mask = 0
 
 [node name="TopRightRoom" parent="World" instance=ExtResource("2_uchko")]
 position = Vector2(480, -270)
@@ -518,7 +520,6 @@ frame = 1
 position = Vector2(200, 119)
 
 [node name="Debug" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("5_18wdw")
 
 [node name="CatState" type="Label" parent="Debug"]
