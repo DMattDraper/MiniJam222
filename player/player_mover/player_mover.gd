@@ -18,8 +18,11 @@ func _ready() -> void:
 
 func jump() -> float:
 	if body.is_on_floor():
-		body.velocity.y = jump_force
-		return jump_force
+		var applied_jump_force = jump_force
+		if body.item_holder.held_item is Bridge:
+			applied_jump_force /= 4.0
+		body.velocity.y = applied_jump_force
+		return applied_jump_force
 	return 0.0
 
 func release_jump() -> float:

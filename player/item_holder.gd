@@ -51,6 +51,7 @@ func pickup(target: Item) -> void:
 
 func drop() -> void:
 	held_item.velocity += body.velocity
+	held_item.drop()
 	held_item.held = false
 	held_item.z_index -= 1
 	held_item = null

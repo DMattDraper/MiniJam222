@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="2_ubqgd"]
 [ext_resource type="Script" uid="uid://ciouekhiw2gmq" path="res://scenes/world.gd" id="3_rst35"]
 [ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://scenes/rooms/room.tscn" id="4_xgxbx"]
-[ext_resource type="PackedScene" uid="uid://cbugdx0hj2nv8" path="res://items/item.tscn" id="5_00i5c"]
+[ext_resource type="PackedScene" uid="uid://cbugdx0hj2nv8" path="res://items/bridge.tscn" id="5_00i5c"]
 [ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="6_at0bn"]
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="7_3gt05"]
 [ext_resource type="PackedScene" uid="uid://bjf4yd37w5u1p" path="res://cat/behaviors/Pawing.tscn" id="7_ubqgd"]

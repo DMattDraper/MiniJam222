@@ -21,3 +21,4 @@ func activate() -> void:
 
 func deactivate() -> void:
 	active = false
+	Statics.hud.update_cat_text("")
