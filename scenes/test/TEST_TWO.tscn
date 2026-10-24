@@ -41,8 +41,8 @@ size = Vector2(416, 16)
 size = Vector2(416, 16)
 
 [sub_resource type="SphereMesh" id="SphereMesh_uax3p"]
-radius = 30.0
-height = 60.0
+radius = 48.0
+height = 96.0
 
 [node name="TEST_TWO" type="Node"]
 
