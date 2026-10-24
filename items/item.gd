@@ -23,4 +23,5 @@ func _physics_process(delta: float) -> void:
 	var flat_velo := velocity.x
 	velocity.x -= flat_velo * drag
 	
+	@warning_ignore("return_value_discarded")
 	move_and_slide()

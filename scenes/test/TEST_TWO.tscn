@@ -352,7 +352,7 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_lubul")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="World/PawingRoom"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.129412, 0.129412, 0.137255, 1)
 z_index = -16
 mesh = SubResource("SphereMesh_uax3p")
 

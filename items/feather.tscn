@@ -1,11 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://ch8p5ht7gs3xi"]
 
 [ext_resource type="Script" uid="uid://dvgjimgataihy" path="res://items/feather.gd" id="1_twa4d"]
+[ext_resource type="SpriteFrames" uid="uid://duk6dwr8p5ikj" path="res://items/item_spriteframes.tres" id="2_4vos1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twa4d"]
-size = Vector2(64, 16)
-
-[sub_resource type="QuadMesh" id="QuadMesh_twa4d"]
 size = Vector2(64, 16)
 
 [node name="Feather" type="CharacterBody2D"]
@@ -18,7 +16,6 @@ script = ExtResource("1_twa4d")
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_twa4d")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0, 0.58196, 0.693637, 1)
-position = Vector2(0, -8)
-mesh = SubResource("QuadMesh_twa4d")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2_4vos1")

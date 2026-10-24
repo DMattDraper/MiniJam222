@@ -12,7 +12,8 @@ z_as_relative = false
 script = ExtResource("1_vlpcm")
 
 [node name="Background" type="Sprite2D" parent="."]
-z_index = -128
+z_index = -64
+z_as_relative = false
 
 [node name="CameraAnchor" type="Marker2D" parent="."]
 

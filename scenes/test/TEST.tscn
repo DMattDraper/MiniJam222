@@ -1,6 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://dcl0di4u8tyi5"]
+[gd_scene load_steps=37 format=3 uid="uid://dcl0di4u8tyi5"]
 
 [ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="1_8tnbd"]
+[ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_xv13t"]
+[ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_8jmbb"]
 [ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="2_22icm"]
 [ext_resource type="Script" uid="uid://ciouekhiw2gmq" path="res://scenes/world.gd" id="2_lubul"]
 [ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://scenes/rooms/room.tscn" id="2_uchko"]
@@ -10,22 +12,19 @@
 [ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="6_e3ma8"]
 [ext_resource type="PackedScene" uid="uid://ch8p5ht7gs3xi" path="res://items/feather.tscn" id="6_im127"]
 [ext_resource type="PackedScene" uid="uid://bd3qr6kdf3d0c" path="res://cat/behaviors/paw_smack.tscn" id="6_svaqw"]
+[ext_resource type="Texture2D" uid="uid://dhayqhx0fgunw" path="res://environment/wood_tile.png" id="6_w1i8c"]
 [ext_resource type="PackedScene" uid="uid://drgjcpixmqgwe" path="res://cat/behaviors/hide_and_seek.tscn" id="7_rfs8u"]
+[ext_resource type="Texture2D" uid="uid://d0ollr2236etb" path="res://environment/box.png" id="8_a0v8o"]
 [ext_resource type="PackedScene" uid="uid://qnclqcxq4uub" path="res://cat/behaviors/jump_scare.tscn" id="8_k4nwc"]
 [ext_resource type="PackedScene" uid="uid://cxvch7jovw5y8" path="res://items/eye_of_newt.tscn" id="8_tpt76"]
 [ext_resource type="PackedScene" uid="uid://tpf0l0ebvm6q" path="res://items/orchid.tscn" id="11_asl1u"]
 [ext_resource type="PackedScene" uid="uid://byhnqxqrd8jd4" path="res://items/toadstool.tscn" id="13_um4pj"]
+[ext_resource type="Texture2D" uid="uid://dlknbpybtnkx2" path="res://environment/barriers.png" id="17_16vlc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tnbd"]
 size = Vector2(480, 16)
 
-[sub_resource type="QuadMesh" id="QuadMesh_8tnbd"]
-size = Vector2(480, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22icm"]
-size = Vector2(208, 16)
-
-[sub_resource type="QuadMesh" id="QuadMesh_18wdw"]
 size = Vector2(208, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lubul"]
@@ -34,10 +33,19 @@ size = Vector2(16, 270)
 [sub_resource type="QuadMesh" id="QuadMesh_lubul"]
 size = Vector2(16, 270)
 
-[sub_resource type="QuadMesh" id="QuadMesh_22icm"]
-size = Vector2(64, 64)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv13t"]
+albedo_texture = ExtResource("6_w1i8c")
+albedo_texture_force_srgb = true
+metallic_specular = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_8tnbd"]
+material = SubResource("StandardMaterial3D_xv13t")
+size = Vector2(480, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18wdw"]
+size = Vector2(64, 64)
+
+[sub_resource type="QuadMesh" id="QuadMesh_22icm"]
 size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3ma8"]
@@ -46,13 +54,57 @@ size = Vector2(416, 16)
 [sub_resource type="QuadMesh" id="QuadMesh_e3ma8"]
 size = Vector2(416, 16)
 
+[sub_resource type="QuadMesh" id="QuadMesh_18wdw"]
+size = Vector2(208, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hhq7"]
 size = Vector2(32, 64)
 
-[sub_resource type="QuadMesh" id="QuadMesh_0hhq7"]
-size = Vector2(32, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq42y"]
+atlas = ExtResource("17_16vlc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt8ka"]
+atlas = ExtResource("17_16vlc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaojj"]
+atlas = ExtResource("17_16vlc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgt3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq42y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt8ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaojj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TEST" type="Node"]
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -128
+z_as_relative = false
+position = Vector2(240, 135)
+
+[node name="Parallax2D" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0, 0)
+
+[node name="Room" type="Sprite2D" parent="Background/Parallax2D"]
+texture = ExtResource("1_xv13t")
+
+[node name="Filter" type="Sprite2D" parent="Background/Parallax2D"]
+modulate = Color(1, 1, 1, 0.568627)
+texture = ExtResource("2_8jmbb")
 
 [node name="Player" parent="." instance=ExtResource("1_8tnbd")]
 position = Vector2(0, 119)
@@ -74,9 +126,11 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/StartingRoom/Floor"]
 shape = SubResource("RectangleShape2D_8tnbd")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/StartingRoom/Floor"]
-modulate = Color(0, 0, 0, 1)
-mesh = SubResource("QuadMesh_8tnbd")
+[node name="Sprite2D" type="Sprite2D" parent="World/StartingRoom/Floor"]
+texture_repeat = 2
+texture = ExtResource("6_w1i8c")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
 
 [node name="Ceiling" type="StaticBody2D" parent="World/StartingRoom"]
 position = Vector2(-136, -127)
@@ -85,9 +139,11 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/StartingRoom/Ceiling"]
 shape = SubResource("RectangleShape2D_22icm")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/StartingRoom/Ceiling"]
-modulate = Color(0, 0, 0, 1)
-mesh = SubResource("QuadMesh_18wdw")
+[node name="Sprite2D" type="Sprite2D" parent="World/StartingRoom/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("6_w1i8c")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
 
 [node name="Ceiling2" type="StaticBody2D" parent="World/StartingRoom"]
 position = Vector2(136, -127)
@@ -96,15 +152,17 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/StartingRoom/Ceiling2"]
 shape = SubResource("RectangleShape2D_22icm")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/StartingRoom/Ceiling2"]
-modulate = Color(0, 0, 0, 1)
-mesh = SubResource("QuadMesh_18wdw")
+[node name="Sprite2D" type="Sprite2D" parent="World/StartingRoom/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("6_w1i8c")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
 
 [node name="DewDrop" parent="World/StartingRoom" instance=ExtResource("5_um4pj")]
-position = Vector2(-64, 0)
+position = Vector2(-64, 119)
 
 [node name="DewDrop2" parent="World/StartingRoom" instance=ExtResource("5_um4pj")]
-position = Vector2(64, 0)
+position = Vector2(64, 119)
 
 [node name="LeftRoom" parent="World" instance=ExtResource("2_uchko")]
 position = Vector2(-480, 0)
@@ -135,23 +193,21 @@ mesh = SubResource("QuadMesh_8tnbd")
 position = Vector2(-192, 87)
 collision_mask = 0
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Block"]
-modulate = Color(0, 0, 0, 1)
-mesh = SubResource("QuadMesh_22icm")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block"]
 shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/LeftRoom/Block"]
+texture = ExtResource("8_a0v8o")
 
 [node name="Block3" type="StaticBody2D" parent="World/LeftRoom"]
 position = Vector2(-192, 23)
 collision_mask = 0
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Block3"]
-modulate = Color(0, 0, 0, 1)
-mesh = SubResource("QuadMesh_22icm")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block3"]
 shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/LeftRoom/Block3"]
+texture = ExtResource("8_a0v8o")
 
 [node name="Block4" type="StaticBody2D" parent="World/LeftRoom"]
 position = Vector2(-192, -41)
@@ -209,7 +265,7 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_e3ma8")
 
 [node name="Feather" parent="World/LeftRoom" instance=ExtResource("6_im127")]
-position = Vector2(32, -72)
+position = Vector2(32, -99)
 
 [node name="TopLeftRoom" parent="World" instance=ExtResource("2_uchko")]
 position = Vector2(-480, -270)
@@ -250,6 +306,7 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_e3ma8")
 
 [node name="EyeOfNewt" parent="World/TopLeftRoom" instance=ExtResource("8_tpt76")]
+position = Vector2(0, 119)
 
 [node name="RightRoom" parent="World" instance=ExtResource("2_uchko")]
 position = Vector2(480, 0)
@@ -329,6 +386,7 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_8tnbd")
 
 [node name="Orchid" parent="World/TopRightRoom" instance=ExtResource("11_asl1u")]
+position = Vector2(0, 119)
 
 [node name="TopRoom" parent="World" instance=ExtResource("2_uchko")]
 position = Vector2(0, -270)
@@ -369,31 +427,34 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_18wdw")
 
 [node name="Pillar" type="StaticBody2D" parent="World/TopRoom"]
-position = Vector2(-136.5, 87)
+position = Vector2(-136, 119)
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRoom/Pillar"]
+position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_0hhq7")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRoom/Pillar"]
-modulate = Color(0.140447, 0.140447, 0.140447, 1)
-mesh = SubResource("QuadMesh_0hhq7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/TopRoom/Pillar"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_bgt3b")
 
 [node name="Pillar2" type="StaticBody2D" parent="World/TopRoom"]
-position = Vector2(136.5, 87)
+position = Vector2(136, 119)
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRoom/Pillar2"]
+position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_0hhq7")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRoom/Pillar2"]
-modulate = Color(0.140447, 0.140447, 0.140447, 1)
-mesh = SubResource("QuadMesh_0hhq7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/TopRoom/Pillar2"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_bgt3b")
+frame = 1
 
 [node name="Toadstool" parent="World/TopRoom" instance=ExtResource("13_um4pj")]
-position = Vector2(200, 0)
+position = Vector2(200, 119)
 
 [node name="Debug" type="CanvasLayer" parent="."]
 script = ExtResource("5_18wdw")
