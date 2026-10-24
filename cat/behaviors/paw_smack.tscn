@@ -1,0 +1,150 @@
+[gd_scene load_steps=10 format=3 uid="uid://bd3qr6kdf3d0c"]
+
+[ext_resource type="Script" uid="uid://c50ibmdalwefr" path="res://cat/behaviors/paw_smack.gd" id="1_kcxag"]
+
+[sub_resource type="Animation" id="Animation_kcxag"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paw:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -64), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Paw:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jyehn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paw:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Paw:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_iubjy"]
+resource_name = "attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paw:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_cqvdm"]
+resource_name = "retract"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paw:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 200), Vector2(0, -64)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Paw:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jyehn"]
+_data = {
+&"RESET": SubResource("Animation_jyehn"),
+&"appear": SubResource("Animation_kcxag"),
+&"attack": SubResource("Animation_iubjy"),
+&"retract": SubResource("Animation_cqvdm")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcxag"]
+radius = 56.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_kcxag"]
+size = Vector2(96, 256)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kcxag"]
+radius = 64.0
+height = 128.0
+
+[node name="PawSmack" type="Node"]
+script = ExtResource("1_kcxag")
+
+[node name="PawHolder" type="Marker2D" parent="."]
+position = Vector2(0, -135)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PawHolder"]
+libraries = {
+&"": SubResource("AnimationLibrary_jyehn")
+}
+
+[node name="Paw" type="Area2D" parent="PawHolder"]
+visible = false
+z_index = 16
+z_as_relative = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PawHolder/Paw"]
+shape = SubResource("CircleShape2D_kcxag")
+
+[node name="Arm" type="MeshInstance2D" parent="PawHolder/Paw"]
+modulate = Color(0.0784314, 0.0784314, 0.0784314, 1)
+position = Vector2(0, -128)
+mesh = SubResource("QuadMesh_kcxag")
+
+[node name="Paw" type="MeshInstance2D" parent="PawHolder/Paw"]
+modulate = Color(0.0768358, 0.0768358, 0.0768358, 1)
+mesh = SubResource("SphereMesh_kcxag")
+
+[connection signal="body_entered" from="PawHolder/Paw" to="." method="_on_paw_body_entered"]
