@@ -67,7 +67,7 @@ func _physics_process(_delta) -> void:
 		peek()
 	arm_holder.scale.y = abs(paw.global_position.x - origin_point.global_position.x)
 
-func handle_behavior() -> void:
+func handle_behavior(_delta: float) -> void:
 	if need_to_peek and state != STATES.PEEKING:
 		state = STATES.PEEKING
 		ray_cast.enabled = true
