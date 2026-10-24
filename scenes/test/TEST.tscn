@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcl0di4u8tyi5"]
+[gd_scene load_steps=23 format=3 uid="uid://dcl0di4u8tyi5"]
 
 [ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="1_8tnbd"]
 [ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="2_22icm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="5_18wdw"]
 [ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="6_0hhq7"]
 [ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="6_e3ma8"]
+[ext_resource type="PackedScene" uid="uid://bd3qr6kdf3d0c" path="res://cat/behaviors/paw_smack.tscn" id="6_svaqw"]
 [ext_resource type="PackedScene" uid="uid://drgjcpixmqgwe" path="res://cat/behaviors/hide_and_seek.tscn" id="7_rfs8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tnbd"]
@@ -59,8 +60,6 @@ script = ExtResource("2_lubul")
 [node name="Camera2D" type="Camera2D" parent="World"]
 
 [node name="StartingRoom" parent="World" instance=ExtResource("2_uchko")]
-z_index = -16
-z_as_relative = false
 starting_room = true
 
 [node name="Floor" type="StaticBody2D" parent="World/StartingRoom"]
@@ -103,8 +102,6 @@ position = Vector2(-124, 0)
 position = Vector2(124, 0)
 
 [node name="LeftRoom" parent="World" instance=ExtResource("2_uchko")]
-z_index = -16
-z_as_relative = false
 position = Vector2(-480, 0)
 
 [node name="Wall" type="StaticBody2D" parent="World/LeftRoom"]
@@ -207,9 +204,9 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_e3ma8")
 
 [node name="TopLeftRoom" parent="World" instance=ExtResource("2_uchko")]
-z_index = -16
-z_as_relative = false
 position = Vector2(-480, -270)
+
+[node name="PawSmack" parent="World/TopLeftRoom" instance=ExtResource("6_svaqw")]
 
 [node name="Wall" type="StaticBody2D" parent="World/TopLeftRoom"]
 position = Vector2(-232, 0)
@@ -245,8 +242,6 @@ modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_e3ma8")
 
 [node name="RightRoom" parent="World" instance=ExtResource("2_uchko")]
-z_index = -16
-z_as_relative = false
 position = Vector2(480, 0)
 
 [node name="Wall" type="StaticBody2D" parent="World/RightRoom"]
@@ -286,8 +281,6 @@ mesh = SubResource("QuadMesh_8tnbd")
 position = Vector2(0, 119)
 
 [node name="TopRoom" parent="World" instance=ExtResource("2_uchko")]
-z_index = -16
-z_as_relative = false
 position = Vector2(0, -270)
 
 [node name="HideAndSeek" parent="World/TopRoom" instance=ExtResource("7_rfs8u")]
