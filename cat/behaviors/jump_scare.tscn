@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qnclqcxq4uub"]
+
+[ext_resource type="Script" uid="uid://b7lqh457wi143" path="res://cat/behaviors/jump_scare.gd" id="1_36w4f"]
+
+[node name="JumpScare" type="Node"]
+script = ExtResource("1_36w4f")

@@ -8,12 +8,12 @@ func _ready() -> void:
 	room = get_parent()
 	room.cat_behavior = self
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if !active:
 		return
-	handle_behavior()
+	handle_behavior(delta)
 
-func handle_behavior() -> void:
+func handle_behavior(_delta: float) -> void:
 	pass
 
 func activate() -> void:

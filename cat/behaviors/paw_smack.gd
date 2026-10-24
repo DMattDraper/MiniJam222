@@ -33,7 +33,7 @@ func _ready() -> void:
 	timer.timeout.connect(update_state)
 	add_child(timer)
 
-func handle_behavior() -> void:
+func handle_behavior(_delta: float) -> void:
 	if state == STATES.APPEARING:
 		paw_holder.global_position.x = lerp(paw_holder.global_position.x, Statics.player.global_position.x, speed)
 
