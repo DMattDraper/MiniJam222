@@ -73,6 +73,7 @@ func handle_behavior(_delta: float) -> void:
 		ray_cast.enabled = true
 
 func peek() -> void:
+	Statics.hud.update_cat_text("Peeking...")
 	ray_cast.target_position = Vector2(cos(Time.get_unix_time_from_system())*(540.0/2.0), sin(Time.get_unix_time_from_system())*(248.0/2.0))
 	if ray_cast.is_colliding():
 		need_to_peek = false
@@ -93,6 +94,7 @@ func peek_again() -> void:
 	need_to_peek = true
 
 func paw_at() -> void:
+	Statics.hud.update_cat_text("GET BACK!")
 	if direction_of_player == DIRECTIONS.LEFT:
 		anim_player.play("Attack_Left")
 	else:

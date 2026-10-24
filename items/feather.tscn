@@ -11,6 +11,7 @@ z_index = -8
 z_as_relative = false
 collision_layer = 16
 script = ExtResource("1_twa4d")
+item_name = "Feather"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

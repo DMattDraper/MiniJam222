@@ -4,6 +4,8 @@ var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var stop_drag := 0.025
 @export var air_drag = 0.1
 
+@export var interaction_message := "Press E to Pickup"
+@export var item_name := "Item"
 var held := false
 
 var move_drag := 0.0
@@ -25,3 +27,6 @@ func _physics_process(delta: float) -> void:
 	
 	@warning_ignore("return_value_discarded")
 	move_and_slide()
+
+func grab() -> void:
+	pass
