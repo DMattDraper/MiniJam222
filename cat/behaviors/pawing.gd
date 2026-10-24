@@ -14,7 +14,7 @@ var player_last_position : Vector2
 @onready var paw_holder : Node2D = $Paw_Holder
 @onready var anim_player = $Paw_Holder/AnimationPlayer
 
-@onready var arm : MeshInstance2D = $Paw_Holder/Arm
+@onready var arm : MeshInstance2D = $Paw_Holder/Arm_Holder/Arm
 @onready var paw : MeshInstance2D = $Paw_Holder/Paw
 
 @onready var arm_holder : Node2D = $Paw_Holder/Arm_Holder
@@ -73,7 +73,7 @@ func handle_behavior(_delta: float) -> void:
 		ray_cast.enabled = true
 
 func peek() -> void:
-	ray_cast.target_position = Vector2(cos(Time.get_unix_time_from_system())*(480.0/2.0), sin(Time.get_unix_time_from_system())*(248.0/2.0))
+	ray_cast.target_position = Vector2(cos(Time.get_unix_time_from_system())*(540.0/2.0), sin(Time.get_unix_time_from_system())*(248.0/2.0))
 	if ray_cast.is_colliding():
 		need_to_peek = false
 		peeking_timer.start()
@@ -105,10 +105,5 @@ func find_origin_point() -> bool:
 			return true
 	return false
 
-func _on_hurtbox_area_entered(area):
-	#GameManager.reset()
-	print("Test")
-
-
-func _on_hurtbox_body_entered(body):
-	GameManager.reset()
+func _on_hurtbox_body_entered(_body):
+	GameManager.call_deferred("reset")
