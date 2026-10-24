@@ -65,7 +65,7 @@ func activate() -> void:
 func deactivate() -> void:
 	super()
 	timer.stop()
-
+	animation_player.play("RESET")
 
 func _on_paw_body_entered(body: Node2D) -> void:
 	if body is Player and state == STATES.ATTACKING:
