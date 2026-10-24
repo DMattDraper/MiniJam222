@@ -15,7 +15,7 @@ var player_last_position : Vector2
 @onready var anim_player = $Paw_Holder/AnimationPlayer
 
 @onready var arm : MeshInstance2D = $Paw_Holder/Arm_Holder/Arm
-@onready var paw : MeshInstance2D = $Paw_Holder/Paw
+@onready var paw : Sprite2D = $Paw_Holder/Paw
 
 @onready var arm_holder : Node2D = $Paw_Holder/Arm_Holder
 

@@ -1,6 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bd3qr6kdf3d0c"]
 
 [ext_resource type="Script" uid="uid://c50ibmdalwefr" path="res://cat/behaviors/paw_smack.gd" id="1_kcxag"]
+[ext_resource type="Texture2D" uid="uid://cfypf56nwop5" path="res://cat/paw.png" id="2_jyehn"]
 
 [sub_resource type="Animation" id="Animation_jyehn"]
 length = 0.001
@@ -107,15 +108,11 @@ _data = {
 &"retract": SubResource("Animation_cqvdm")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kcxag"]
-radius = 56.0
-
 [sub_resource type="QuadMesh" id="QuadMesh_kcxag"]
-size = Vector2(96, 256)
+size = Vector2(64, 256)
 
-[sub_resource type="SphereMesh" id="SphereMesh_kcxag"]
-radius = 64.0
-height = 128.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcxag"]
+radius = 40.0
 
 [node name="PawSmack" type="Node"]
 script = ExtResource("1_kcxag")
@@ -135,16 +132,15 @@ z_as_relative = false
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PawHolder/Paw"]
-shape = SubResource("CircleShape2D_kcxag")
-
 [node name="Arm" type="MeshInstance2D" parent="PawHolder/Paw"]
-modulate = Color(0.0784314, 0.0784314, 0.0784314, 1)
+modulate = Color(0.129412, 0.129412, 0.137255, 1)
 position = Vector2(0, -128)
 mesh = SubResource("QuadMesh_kcxag")
 
-[node name="Paw" type="MeshInstance2D" parent="PawHolder/Paw"]
-modulate = Color(0.0768358, 0.0768358, 0.0768358, 1)
-mesh = SubResource("SphereMesh_kcxag")
+[node name="Paw" type="Sprite2D" parent="PawHolder/Paw"]
+texture = ExtResource("2_jyehn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PawHolder/Paw"]
+shape = SubResource("CircleShape2D_kcxag")
 
 [connection signal="body_entered" from="PawHolder/Paw" to="." method="_on_paw_body_entered"]

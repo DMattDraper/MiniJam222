@@ -1,17 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://byhnqxqrd8jd4"]
+[gd_scene load_steps=4 format=3 uid="uid://byhnqxqrd8jd4"]
 
 [ext_resource type="Script" uid="uid://bl66yiu170p8l" path="res://items/toadstool.gd" id="1_sfeh5"]
+[ext_resource type="SpriteFrames" uid="uid://duk6dwr8p5ikj" path="res://items/item_spriteframes.tres" id="2_e1tpy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfeh5"]
 radius = 16.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_sfeh5"]
-radius = 16.0
-height = 16.0
-is_hemisphere = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_sfeh5"]
-size = Vector2(16, 16)
 
 [node name="Toadstool" type="CharacterBody2D"]
 z_index = -8
@@ -23,13 +16,7 @@ script = ExtResource("1_sfeh5")
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_sfeh5")
 
-[node name="Head" type="MeshInstance2D" parent="."]
-modulate = Color(0.36, 0.19128, 0.0936, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
-rotation = 3.14159
-mesh = SubResource("SphereMesh_sfeh5")
-
-[node name="Stem" type="MeshInstance2D" parent="."]
-modulate = Color(0.682817, 0.660843, 0.564056, 1)
-position = Vector2(0, -8)
-mesh = SubResource("QuadMesh_sfeh5")
+sprite_frames = ExtResource("2_e1tpy")
+frame = 3

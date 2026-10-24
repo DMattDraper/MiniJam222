@@ -1,11 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnoc23eukbkvi"]
 
 [ext_resource type="Script" uid="uid://vkelkb0ebm0g" path="res://items/dew_drop.gd" id="1_ugghc"]
+[ext_resource type="SpriteFrames" uid="uid://duk6dwr8p5ikj" path="res://items/item_spriteframes.tres" id="2_pvmlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ugghc"]
-size = Vector2(16, 32)
-
-[sub_resource type="QuadMesh" id="QuadMesh_ugghc"]
 size = Vector2(16, 32)
 
 [node name="DewDrop" type="CharacterBody2D"]
@@ -18,7 +16,7 @@ script = ExtResource("1_ugghc")
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_ugghc")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0, 0.559667, 0.73, 0.658824)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
-mesh = SubResource("QuadMesh_ugghc")
+sprite_frames = ExtResource("2_pvmlu")
+frame = 2

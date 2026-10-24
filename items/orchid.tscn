@@ -1,11 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://tpf0l0ebvm6q"]
 
 [ext_resource type="Script" uid="uid://dajxfesyat0ck" path="res://items/orchid.gd" id="1_hs4yg"]
+[ext_resource type="SpriteFrames" uid="uid://duk6dwr8p5ikj" path="res://items/item_spriteframes.tres" id="2_cfa0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hs4yg"]
-size = Vector2(32, 32)
-
-[sub_resource type="QuadMesh" id="QuadMesh_cfa0q"]
 size = Vector2(32, 32)
 
 [node name="Orchid" type="CharacterBody2D"]
@@ -18,7 +16,7 @@ script = ExtResource("1_hs4yg")
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_hs4yg")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0.56521, 0.2842, 0.58, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
-mesh = SubResource("QuadMesh_cfa0q")
+sprite_frames = ExtResource("2_cfa0q")
+frame = 4
