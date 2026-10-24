@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmofsuglnmjre"]
+
+[ext_resource type="Script" uid="uid://bixkqn037hhj5" path="res://cat/behaviors/milk_distraction.gd" id="1_hamju"]
+[ext_resource type="Script" uid="uid://cwfwi6u7tpvrw" path="res://interactables/saucer.gd" id="2_ly62u"]
+[ext_resource type="SpriteFrames" uid="uid://ch8wl4j687sss" path="res://interactables/saucer_spriteframes.tres" id="3_ly62u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t81w6"]
+size = Vector2(64, 16)
+
+[node name="MilkDistraction" type="Node"]
+script = ExtResource("1_hamju")
+
+[node name="Saucer" type="CharacterBody2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_ly62u")
+interaction_message = "Press E to Fill"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Saucer"]
+position = Vector2(0, -7)
+sprite_frames = ExtResource("3_ly62u")
+animation = &"empty"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saucer"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_t81w6")

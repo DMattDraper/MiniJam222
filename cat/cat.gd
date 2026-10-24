@@ -18,6 +18,7 @@ var state : STATES = STATES.WANDERING
 @export var wander_time := 10.0
 @export var search_time := 5.0
 @export var hunt_time := 2.5
+@export var distract_time := 30.0
 
 var patience := 0
 @export var search_patience := 3
@@ -26,6 +27,8 @@ var patience := 0
 var timer : Timer
 
 func _ready() -> void:
+	Statics.cat = self
+	
 	timer = Timer.new()
 	timer.wait_time = wander_time
 	timer.timeout.connect(process_state)
@@ -62,7 +65,8 @@ func change_state(new_state: STATES) -> void:
 		STATES.ATTACKING:
 			current_room.activate()
 		STATES.DISTRACTED:
-			pass
+			timer.wait_time = distract_time
+			timer.start()
 
 func process_state() -> void:
 	if current_room == Statics.world.current_room:
@@ -76,10 +80,12 @@ func process_state() -> void:
 			STATES.ATTACKING:
 				pass
 			STATES.DISTRACTED:
-				pass
+				change_state(STATES.WANDERING)
 	else:
 		if state == STATES.ATTACKING:
 			change_state(STATES.HUNTING)
+		elif state == STATES.DISTRACTED:
+			change_state(STATES.WANDERING)
 		else:
 			change_room()
 
