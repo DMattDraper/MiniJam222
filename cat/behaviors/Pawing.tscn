@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjf4yd37w5u1p"]
+
+[ext_resource type="Script" uid="uid://c8awu4t83psfe" path="res://cat/behaviors/pawing.gd" id="1_aabus"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_aabus"]
+size = Vector3(32, 64, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_aabus"]
+radius = 28.0
+height = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aabus"]
+size = Vector2(64, 40)
+
+[node name="Pawing" type="Node"]
+script = ExtResource("1_aabus")
+metadata/_custom_type_script = "uid://c8awu4t83psfe"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 2
+
+[node name="Paw" type="Node2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Paw"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("BoxMesh_aabus")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Paw"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 40)
+mesh = SubResource("SphereMesh_aabus")
+
+[node name="Hurtbox" type="Area2D" parent="Paw"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paw/Hurtbox"]
+position = Vector2(0, 41)
+shape = SubResource("RectangleShape2D_aabus")
