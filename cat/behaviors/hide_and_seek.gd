@@ -27,7 +27,7 @@ func deactivate() -> void:
 	super()
 	timer.stop()
 
-func handle_behavior() -> void:
+func handle_behavior(_delta: float) -> void:
 	if seeking:
 		var target = ray_cast.get_collider()
 		if target != null and target is Player:
