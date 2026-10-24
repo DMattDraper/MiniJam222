@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxvch7jovw5y8"]
+
+[ext_resource type="Script" uid="uid://g6kqdjufgf26" path="res://items/eye_of_newt.gd" id="1_v612f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v612f"]
+radius = 16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_v612f"]
+radius = 16.0
+height = 32.0
+
+[node name="EyeOfNewt" type="CharacterBody2D"]
+z_index = -8
+z_as_relative = false
+collision_layer = 16
+script = ExtResource("1_v612f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_v612f")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.8, 0.652533, 0.168, 1)
+position = Vector2(0, -16)
+mesh = SubResource("SphereMesh_v612f")

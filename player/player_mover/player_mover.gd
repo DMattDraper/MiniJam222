@@ -32,7 +32,10 @@ func _physics_process(delta: float) -> void:
 	
 	# Apply Gravity
 	if not body.is_on_floor():
-		body.velocity.y += gravity * delta
+		var applied_gravity := gravity * delta
+		if body.velocity.y > 0 and body.item_holder.held_item is Feather:
+			applied_gravity *= 0.25
+		body.velocity.y += applied_gravity
 	
 	# Calculate Drag
 	var drag := move_drag
