@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://tpf0l0ebvm6q"]
+
+[ext_resource type="Script" uid="uid://dajxfesyat0ck" path="res://items/orchid.gd" id="1_hs4yg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hs4yg"]
+size = Vector2(32, 32)
+
+[sub_resource type="QuadMesh" id="QuadMesh_cfa0q"]
+size = Vector2(32, 32)
+
+[node name="Orchid" type="CharacterBody2D"]
+z_index = -8
+z_as_relative = false
+collision_layer = 16
+script = ExtResource("1_hs4yg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_hs4yg")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.56521, 0.2842, 0.58, 1)
+position = Vector2(0, -16)
+mesh = SubResource("QuadMesh_cfa0q")

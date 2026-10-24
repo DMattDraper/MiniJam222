@@ -35,10 +35,12 @@ func interact() -> void:
 func pickup(target: Item) -> void:
 	held_item = target
 	held_item.held = true
+	held_item.z_index += 1
 
 func drop() -> void:
 	held_item.velocity += body.velocity
 	held_item.held = false
+	held_item.z_index -= 1
 	held_item = null
 
 func destroy() -> void:
