@@ -25,12 +25,15 @@ func _process(_delta: float) -> void:
 		Statics.hud.update_interaction_text(target.interaction_message)
 	else:
 		Statics.hud.update_interaction_text("")
+
 func interact() -> void:
 	var target = ray.get_collider()
 	
 	if target != null and target is Interactable:
 		if target is Cauldron:
 			if (target.interact(held_item)): destroy()
+			return
+		target.interact(held_item)
 		return
 	
 	if held_item != null:
