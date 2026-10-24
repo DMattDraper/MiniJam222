@@ -13,6 +13,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	direction = Input.get_axis("move_left", "move_right")
 	
+	if item_holder.held_item is Bridge:
+		$CollisionShape2D2.disabled = false
+	else:
+		$CollisionShape2D2.disabled = true
+	
 	if direction < 0.0:
 		facing = -1.0
 		sprite.flip_h = true

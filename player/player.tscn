@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://xoj8m0vm50nd"]
+[gd_scene load_steps=20 format=3 uid="uid://xoj8m0vm50nd"]
 
 [ext_resource type="Script" uid="uid://8bu57mmor5is" path="res://player/player_mover/player_mover.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://34vq6b8mde86" path="res://player/player.gd" id="1_rkbax"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_duas1"]
 size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
+size = Vector2(192, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjkh3"]
 atlas = ExtResource("4_yw30f")
@@ -134,13 +137,17 @@ script = ExtResource("1_rkbax")
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_duas1")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_yw30f")
+
 [node name="PlayerMover" type="Node" parent="."]
 script = ExtResource("1_oul6g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_g6k8r")
-animation = &"idle_hold"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="ItemHolder" type="Node2D" parent="."]

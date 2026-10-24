@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbugdx0hj2nv8"]
+[gd_scene load_steps=4 format=3 uid="uid://mx61wv3sn5x6"]
 
-[ext_resource type="Script" uid="uid://023oid43xxat" path="res://items/item.gd" id="1_pxpuq"]
+[ext_resource type="Script" uid="uid://023oid43xxat" path="res://items/item.gd" id="1_vghco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxpuq"]
 size = Vector2(16, 16)
@@ -12,7 +12,7 @@ size = Vector2(16, 16)
 z_index = -8
 z_as_relative = false
 collision_layer = 16
-script = ExtResource("1_pxpuq")
+script = ExtResource("1_vghco")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

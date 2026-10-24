@@ -10,6 +10,9 @@ var held := false
 
 var move_drag := 0.0
 
+func _ready() -> void:
+	add_to_group("items")
+
 func _physics_process(delta: float) -> void:
 	# Apply Gravity
 	if not is_on_floor() and not held:
@@ -29,4 +32,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func grab() -> void:
+	pass
+
+func drop() -> void:
 	pass
