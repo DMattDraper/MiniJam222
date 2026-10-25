@@ -171,7 +171,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 238, 16)
 
 [node name="Bird" parent="World/Room-1_-7" instance=ExtResource("8_43356")]
-position = Vector2(-160, -32)
+position = Vector2(-192, -32)
 
 [node name="Backdrop" type="MeshInstance2D" parent="World/Room-1_-7"]
 modulate = Color(0.343736, 0.184889, 0.139532, 1)

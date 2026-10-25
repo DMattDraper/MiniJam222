@@ -15,7 +15,6 @@ var worm : Worm
 func _ready() -> void:
 	room = get_parent()
 	worm_scanner.global_position = room.global_position
-	worm_scanner.shape.extents = Vector2(480, 270)
 	
 	timer = Timer.new()
 	add_child(timer)
