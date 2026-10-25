@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://dni5nokmu26od"]
+[gd_scene load_steps=97 format=3 uid="uid://dni5nokmu26od"]
 
 [ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_fumd2"]
 [ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_2ov4n"]
@@ -51,6 +51,9 @@ size = Vector2(104, 16)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dqvtl"]
 load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q1ki"]
+size = Vector2(164, 16)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fsvxl"]
 load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
 
@@ -100,7 +103,7 @@ size = Vector2(242, 16)
 load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34npq"]
-size = Vector2(120, 16)
+size = Vector2(100, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0xml"]
 size = Vector2(48, 16)
@@ -140,6 +143,9 @@ load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fi2p8"]
 size = Vector2(108, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmvxp"]
+size = Vector2(100, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyj4x"]
 size = Vector2(48, 16)
@@ -370,9 +376,6 @@ region_rect = Rect2(0, 0, 184, 16)
 [node name="Block" parent="World/Room-3_-1" instance=ExtResource("8_r41n4")]
 position = Vector2(0, 87)
 
-[node name="Block2" parent="World/Room-3_-1" instance=ExtResource("8_r41n4")]
-position = Vector2(0, 24)
-
 [node name="Block3" parent="World/Room-3_-1" instance=ExtResource("8_r41n4")]
 position = Vector2(64, 87)
 
@@ -465,7 +468,7 @@ position = Vector2(-96, -127)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Ceiling"]
-shape = SubResource("RectangleShape2D_fsvxl")
+shape = SubResource("RectangleShape2D_6q1ki")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Ceiling"]
 texture_repeat = 2
@@ -935,7 +938,7 @@ position = Vector2(172, 48)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-3/Floor4"]
-shape = SubResource("RectangleShape2D_34npq")
+shape = SubResource("RectangleShape2D_kmvxp")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-3/Floor4"]
 texture = SubResource("CompressedTexture2D_dqvtl")
