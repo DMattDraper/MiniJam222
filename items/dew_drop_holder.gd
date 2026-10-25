@@ -17,3 +17,8 @@ func _on_fill_box_body_entered(body):
 			fill()
 		if body.has_method("delete_self"):
 			body.delete_self()
+
+func reset() -> void:
+	super()
+	filled = false
+	sprite.frame = 5
