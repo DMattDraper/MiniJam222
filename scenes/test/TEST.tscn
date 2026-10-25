@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ciouekhiw2gmq" path="res://scenes/world.gd" id="2_lubul"]
 [ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://scenes/rooms/room.tscn" id="2_uchko"]
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="5_18wdw"]
-[ext_resource type="PackedScene" uid="uid://bnoc23eukbkvi" path="res://items/dew_drop.tscn" id="5_um4pj"]
+[ext_resource type="PackedScene" uid="uid://bnoc23eukbkvi" path="res://items/dew_drop_holder.tscn" id="5_um4pj"]
 [ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="6_0hhq7"]
 [ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="6_e3ma8"]
 [ext_resource type="PackedScene" uid="uid://ch8p5ht7gs3xi" path="res://items/feather.tscn" id="6_im127"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxslalxvm1cgo"]
+
+[ext_resource type="Script" uid="uid://b84hhhovrwupa" path="res://items/dew_drop_spawner.gd" id="1_e0mqy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_efpco"]
+size = Vector3(12, 100, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_e0mqy"]
+radius = 24.0
+height = 48.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_efpco"]
+radius = 12.0
+height = 18.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_gvnu8"]
+radius = 12.0
+height = 12.0
+
+[node name="DewDropSpawner" type="Node2D"]
+script = ExtResource("1_e0mqy")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.251874, 1.68458e-07, 1)
+z_index = -16
+position = Vector2(-0.0271835, 49)
+mesh = SubResource("BoxMesh_efpco")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0, 0.0196078, 1)
+z_index = -16
+position = Vector2(-0.0271835, -1)
+mesh = SubResource("SphereMesh_e0mqy")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+z_index = -16
+position = Vector2(-0.0271835, -1)
+mesh = SubResource("SphereMesh_efpco")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.878431, 0, 1)
+z_index = -16
+position = Vector2(-9, 90)
+rotation = 0.785398
+mesh = SubResource("SphereMesh_gvnu8")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.878431, 0, 1)
+z_index = -16
+position = Vector2(9, 90)
+rotation = 5.49779
+mesh = SubResource("SphereMesh_gvnu8")

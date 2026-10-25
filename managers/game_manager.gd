@@ -12,7 +12,7 @@ func die() -> void:
 	Statics.hud.update_message_text("You were caught by the Cat! Don't give up!")
 
 func reset() -> void:
-	DewDrop.added_to_cauldron = false
+	DewDropHolder.added_to_cauldron = false
 	EyeOfNewt.added_to_cauldron = false
 	Feather.added_to_cauldron = false
 	Orchid.added_to_cauldron = false
