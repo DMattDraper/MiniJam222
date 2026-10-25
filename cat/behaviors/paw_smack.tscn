@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd3qr6kdf3d0c"]
+[gd_scene load_steps=16 format=3 uid="uid://bd3qr6kdf3d0c"]
 
 [ext_resource type="Script" uid="uid://c50ibmdalwefr" path="res://cat/behaviors/paw_smack.gd" id="1_kcxag"]
 [ext_resource type="Texture2D" uid="uid://cfypf56nwop5" path="res://cat/paw.png" id="2_jyehn"]
+[ext_resource type="Script" uid="uid://dcqe5opfdnir3" path="res://cat/behaviors/graphics.gd" id="3_cqvdm"]
+[ext_resource type="Texture2D" uid="uid://di3ytsi8mogyw" path="res://cat/head.png" id="3_iubjy"]
 
 [sub_resource type="Animation" id="Animation_jyehn"]
 length = 0.001
@@ -114,6 +116,58 @@ size = Vector2(64, 256)
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcxag"]
 radius = 40.0
 
+[sub_resource type="Animation" id="Animation_mwnw0"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatHead:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 64), Vector2(0, -25)]
+}
+
+[sub_resource type="Animation" id="Animation_60t1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatHead:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_5kk51"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatHead:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -25), Vector2(0, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60t1v"]
+_data = {
+&"RESET": SubResource("Animation_60t1v"),
+&"appear": SubResource("Animation_mwnw0"),
+&"disappear": SubResource("Animation_5kk51")
+}
+
 [node name="PawSmack" type="Node"]
 script = ExtResource("1_kcxag")
 
@@ -142,5 +196,20 @@ texture = ExtResource("2_jyehn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PawHolder/Paw"]
 shape = SubResource("CircleShape2D_kcxag")
+
+[node name="Graphics" type="Node2D" parent="."]
+z_as_relative = false
+script = ExtResource("3_cqvdm")
+
+[node name="CatHead" type="Sprite2D" parent="Graphics"]
+z_index = -64
+z_as_relative = false
+position = Vector2(0, 64)
+texture = ExtResource("3_iubjy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Graphics"]
+libraries = {
+&"": SubResource("AnimationLibrary_60t1v")
+}
 
 [connection signal="body_entered" from="PawHolder/Paw" to="." method="_on_paw_body_entered"]

@@ -6,4 +6,4 @@ func _ready() -> void:
 	Statics.debug = self
 
 func set_cat_state_label(state: String) -> void:
-	cat_state.text = "Cat is %s" % [state]
+	cat_state.text = "Cat is in Room %s" % [state]

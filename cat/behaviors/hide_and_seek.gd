@@ -22,11 +22,13 @@ func _ready() -> void:
 func activate() -> void:
 	super()
 	timer.start()
+	graphics.play("patrol")
 
 func deactivate() -> void:
 	super()
 	timer.stop()
 	Statics.hud.update_cat_text("")
+	graphics.stop()
 
 func handle_behavior(_delta: float) -> void:
 	if seeking:
@@ -48,6 +50,8 @@ func start_seek() -> void:
 	seeking = true
 	ray_cast.position.x = Statics.game_screen_width / 2.0
 	Statics.hud.update_cat_text("DON'T MOVE!")
+	graphics.play("attack")
 
 func stop_seek() -> void:
 	seeking = false
+	graphics.play("patrol")

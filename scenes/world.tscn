@@ -1,3 +1,107 @@
-[gd_scene format=3 uid="uid://b6oemqo42lpgm"]
+[gd_scene load_steps=11 format=3 uid="uid://b6oemqo42lpgm"]
+
+[ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_7r4gi"]
+[ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_w7kh3"]
+[ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="3_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="4_q5onr"]
+[ext_resource type="Script" uid="uid://ciouekhiw2gmq" path="res://scenes/world.gd" id="5_jhx03"]
+[ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="6_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://scenes/rooms/room.tscn" id="6_w7kh3"]
+[ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="7_xo05s"]
+[ext_resource type="Script" uid="uid://cbq73f5yf14d5" path="res://ui/hud.gd" id="8_dss4m"]
+[ext_resource type="Theme" uid="uid://bc3b833woaf0h" path="res://ui/hud_theme.tres" id="9_7t5mc"]
 
 [node name="World" type="Node"]
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -128
+z_as_relative = false
+position = Vector2(240, 135)
+
+[node name="Parallax2D" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0, 0)
+
+[node name="Room" type="Sprite2D" parent="Background/Parallax2D"]
+texture = ExtResource("1_7r4gi")
+
+[node name="Filter" type="Sprite2D" parent="Background/Parallax2D"]
+modulate = Color(1, 1, 1, 0.568627)
+texture = ExtResource("2_w7kh3")
+
+[node name="Player" parent="." instance=ExtResource("3_e3hyu")]
+position = Vector2(0, 119)
+
+[node name="Cat" parent="." instance=ExtResource("4_q5onr")]
+
+[node name="World" type="Node" parent="."]
+script = ExtResource("5_jhx03")
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+
+[node name="Room" parent="World" instance=ExtResource("6_w7kh3")]
+
+[node name="Debug" type="CanvasLayer" parent="."]
+script = ExtResource("6_o8fc1")
+
+[node name="CatState" type="Label" parent="Debug"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_xo05s")
+text = "Cat is WANDERING"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("8_dss4m")
+
+[node name="MessageText" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -26.0
+offset_right = 57.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_7t5mc")
+text = "Message goes here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionText" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = 2.0
+offset_right = 40.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_7t5mc")
+text = "Press E to Do"
+vertical_alignment = 1
+
+[node name="CatText" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_right = 40.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("9_7t5mc")
+text = "Cat Go Meow"
+horizontal_alignment = 1
+vertical_alignment = 1
