@@ -1,0 +1,153 @@
+[gd_scene load_steps=11 format=3 uid="uid://btwnf86sbaqj2"]
+
+[ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://xip8jm68a7da" path="res://scenes/main_menu.gd" id="1_oa1go"]
+[ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://dhayqhx0fgunw" path="res://environment/wood_tile.png" id="3_bqqt6"]
+[ext_resource type="SpriteFrames" uid="uid://c5f3grsm5gt1d" path="res://player/player_spriteframes.tres" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://dt2qg7od2jbl5" path="res://cat/upper_section.png" id="5_8ln24"]
+[ext_resource type="Theme" uid="uid://bc3b833woaf0h" path="res://ui/hud_theme.tres" id="6_rtw2f"]
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+resource_name = "bob"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.500165, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(120, 206), Vector2(120, 198), Vector2(120, 206), Vector2(120, 214), Vector2(120, 206)]
+}
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(120, 206)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtw2f"]
+_data = {
+&"RESET": SubResource("Animation_rtw2f"),
+&"bob": SubResource("Animation_8ln24")
+}
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_oa1go")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+z_index = -128
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l6cm7")
+
+[node name="Filter" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.568627)
+z_index = -127
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ekxnf")
+
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer"]
+repeat_size = Vector2(480, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 3
+
+[node name="Floor" type="Sprite2D" parent="CanvasLayer/Parallax2D"]
+texture_repeat = 2
+position = Vector2(240, 262)
+texture = ExtResource("3_bqqt6")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="Sprite2D" parent="CanvasLayer/Parallax2D"]
+texture_repeat = 2
+position = Vector2(240, 8)
+texture = ExtResource("3_bqqt6")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Gnome" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(360, 223)
+sprite_frames = ExtResource("4_wu84c")
+animation = &"run"
+autoplay = "run"
+
+[node name="Cat" type="Sprite2D" parent="CanvasLayer"]
+z_index = -1
+z_as_relative = false
+position = Vector2(120, 206)
+texture = ExtResource("5_8ln24")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Cat"]
+libraries = {
+&"": SubResource("AnimationLibrary_rtw2f")
+}
+autoplay = "bob"
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -45.0
+offset_right = 60.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_rtw2f")
+theme_override_font_sizes/font_size = 32
+text = "Cat and Mouse Game"
+
+[node name="Start" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -11.0
+offset_right = 25.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_rtw2f")
+text = "START"
+
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="start"]
