@@ -11,6 +11,10 @@ func interact(item: Item) -> bool:
 		Statics.hud.update_message_text("This item can't go in the cauldron...")
 		return false
 	
+	if item is DewDropHolder and !item.filled:
+		Statics.hud.update_message_text("You need a drop of dew for the cauldron...")
+		return false
+	
 	if item.added_to_cauldron:
 		Statics.hud.update_message_text("You don't need another one of these...")
 		return false
@@ -33,7 +37,7 @@ func is_valid_type(item: Item) -> bool:
 		return true
 	if item is Toadstool:
 		return true
-	if item is DewDrop:
+	if item is DewDropHolder:
 		return true
 	
 	return false

@@ -1,0 +1,594 @@
+[gd_scene load_steps=45 format=3 uid="uid://bddc023tyfdld"]
+
+[ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_sl60e"]
+[ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_p0a6f"]
+[ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="3_n868h"]
+[ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="4_1mgsx"]
+[ext_resource type="Script" uid="uid://ciouekhiw2gmq" path="res://scenes/world.gd" id="5_nulyg"]
+[ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://scenes/rooms/room.tscn" id="6_32bis"]
+[ext_resource type="PackedScene" uid="uid://bmofsuglnmjre" path="res://cat/behaviors/milk_distraction.tscn" id="7_78ex5"]
+[ext_resource type="Texture2D" uid="uid://dhayqhx0fgunw" path="res://environment/wood_tile.png" id="8_fvj8u"]
+[ext_resource type="PackedScene" uid="uid://bnoc23eukbkvi" path="res://items/dew_drop_holder.tscn" id="9_g15t0"]
+[ext_resource type="Texture2D" uid="uid://d0ollr2236etb" path="res://environment/box.png" id="10_8pmj4"]
+[ext_resource type="PackedScene" uid="uid://ch8p5ht7gs3xi" path="res://items/feather.tscn" id="11_urkxm"]
+[ext_resource type="PackedScene" uid="uid://bd3qr6kdf3d0c" path="res://cat/behaviors/paw_smack.tscn" id="12_khtpl"]
+[ext_resource type="PackedScene" uid="uid://cxvch7jovw5y8" path="res://items/eye_of_newt.tscn" id="13_34ryo"]
+[ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="14_07y58"]
+[ext_resource type="PackedScene" uid="uid://drxcxmgmc8j24" path="res://mouse/mouse.tscn" id="15_o5hr5"]
+[ext_resource type="PackedScene" uid="uid://qnclqcxq4uub" path="res://cat/behaviors/jump_scare.tscn" id="16_46kpy"]
+[ext_resource type="PackedScene" uid="uid://tpf0l0ebvm6q" path="res://items/orchid.tscn" id="17_qmjoa"]
+[ext_resource type="PackedScene" uid="uid://drgjcpixmqgwe" path="res://cat/behaviors/hide_and_seek.tscn" id="18_0unxo"]
+[ext_resource type="Texture2D" uid="uid://dlknbpybtnkx2" path="res://environment/barriers.png" id="19_6qa5q"]
+[ext_resource type="PackedScene" uid="uid://byhnqxqrd8jd4" path="res://items/toadstool.tscn" id="20_ormnd"]
+[ext_resource type="PackedScene" uid="uid://cbugdx0hj2nv8" path="res://items/bridge.tscn" id="21_0gk54"]
+[ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="22_0qi1j"]
+[ext_resource type="PackedScene" uid="uid://cxslalxvm1cgo" path="res://items/dew_drop_spawner.tscn" id="22_p0a6f"]
+[ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="23_421bu"]
+[ext_resource type="Script" uid="uid://cbq73f5yf14d5" path="res://ui/hud.gd" id="24_1tnci"]
+[ext_resource type="Theme" uid="uid://bc3b833woaf0h" path="res://ui/hud_theme.tres" id="25_2ag65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tnbd"]
+size = Vector2(480, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22icm"]
+size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt8ka"]
+size = Vector2(16, 174)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mt8ka"]
+size = Vector2(16, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lubul"]
+size = Vector2(16, 270)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lubul"]
+size = Vector2(16, 270)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv13t"]
+albedo_texture = ExtResource("8_fvj8u")
+albedo_texture_force_srgb = true
+metallic_specular = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_8tnbd"]
+material = SubResource("StandardMaterial3D_xv13t")
+size = Vector2(480, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18wdw"]
+size = Vector2(64, 64)
+
+[sub_resource type="QuadMesh" id="QuadMesh_22icm"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3ma8"]
+size = Vector2(416, 16)
+
+[sub_resource type="QuadMesh" id="QuadMesh_e3ma8"]
+size = Vector2(416, 16)
+
+[sub_resource type="QuadMesh" id="QuadMesh_18wdw"]
+size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hhq7"]
+size = Vector2(32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq42y"]
+atlas = ExtResource("19_6qa5q")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt8ka"]
+atlas = ExtResource("19_6qa5q")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaojj"]
+atlas = ExtResource("19_6qa5q")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgt3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq42y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt8ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaojj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TEST" type="Node"]
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -128
+z_as_relative = false
+position = Vector2(240, 135)
+
+[node name="Parallax2D" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0, 0)
+
+[node name="Room" type="Sprite2D" parent="Background/Parallax2D"]
+texture = ExtResource("1_sl60e")
+
+[node name="Filter" type="Sprite2D" parent="Background/Parallax2D"]
+modulate = Color(1, 1, 1, 0.568627)
+texture = ExtResource("2_p0a6f")
+
+[node name="Player" parent="." instance=ExtResource("3_n868h")]
+position = Vector2(0, 119)
+
+[node name="Cat" parent="." instance=ExtResource("4_1mgsx")]
+
+[node name="World" type="Node" parent="."]
+script = ExtResource("5_nulyg")
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+
+[node name="StartingRoom" parent="World" instance=ExtResource("6_32bis")]
+starting_room = true
+
+[node name="MilkDistraction" parent="World/StartingRoom" instance=ExtResource("7_78ex5")]
+
+[node name="Floor" type="StaticBody2D" parent="World/StartingRoom"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StartingRoom/Floor"]
+shape = SubResource("RectangleShape2D_8tnbd")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/StartingRoom/Floor"]
+texture_repeat = 2
+texture = ExtResource("8_fvj8u")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/StartingRoom"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StartingRoom/Ceiling"]
+shape = SubResource("RectangleShape2D_22icm")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/StartingRoom/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("8_fvj8u")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/StartingRoom"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StartingRoom/Ceiling2"]
+shape = SubResource("RectangleShape2D_22icm")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/StartingRoom/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("8_fvj8u")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="DewDrop" parent="World/StartingRoom" instance=ExtResource("9_g15t0")]
+position = Vector2(-64, 119)
+
+[node name="DewDrop2" parent="World/StartingRoom" instance=ExtResource("9_g15t0")]
+position = Vector2(64, 119)
+
+[node name="Wall" type="StaticBody2D" parent="World/StartingRoom"]
+position = Vector2(232, -32)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StartingRoom/Wall"]
+shape = SubResource("RectangleShape2D_mt8ka")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/StartingRoom/Wall"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_mt8ka")
+
+[node name="LeftRoom" parent="World" instance=ExtResource("6_32bis")]
+position = Vector2(-480, 0)
+
+[node name="Wall" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(-232, 0)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Wall"]
+shape = SubResource("RectangleShape2D_lubul")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Wall"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_lubul")
+
+[node name="Floor" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Floor"]
+shape = SubResource("RectangleShape2D_8tnbd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Floor"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_8tnbd")
+
+[node name="Block" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(-192, 87)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/LeftRoom/Block"]
+texture = ExtResource("10_8pmj4")
+
+[node name="Block3" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(-192, 23)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block3"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/LeftRoom/Block3"]
+texture = ExtResource("10_8pmj4")
+
+[node name="Block4" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(-192, -41)
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Block4"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_22icm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block4"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Block2" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(-128, 87)
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Block2"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_22icm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block2"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Block5" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(-128, 23)
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Block5"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_22icm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block5"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Block6" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(-64, 87)
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Block6"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_22icm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block6"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Ceiling" type="StaticBody2D" parent="World/LeftRoom"]
+position = Vector2(32, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Ceiling"]
+shape = SubResource("RectangleShape2D_e3ma8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/LeftRoom/Ceiling"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_e3ma8")
+
+[node name="Feather" parent="World/LeftRoom" instance=ExtResource("11_urkxm")]
+position = Vector2(32, -99)
+
+[node name="TopLeftRoom" parent="World" instance=ExtResource("6_32bis")]
+position = Vector2(-480, -270)
+
+[node name="PawSmack" parent="World/TopLeftRoom" instance=ExtResource("12_khtpl")]
+
+[node name="Wall" type="StaticBody2D" parent="World/TopLeftRoom"]
+position = Vector2(-232, 0)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopLeftRoom/Wall"]
+shape = SubResource("RectangleShape2D_lubul")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopLeftRoom/Wall"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_lubul")
+
+[node name="Ceiling" type="StaticBody2D" parent="World/TopLeftRoom"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopLeftRoom/Ceiling"]
+shape = SubResource("RectangleShape2D_8tnbd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopLeftRoom/Ceiling"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_8tnbd")
+
+[node name="Floor" type="StaticBody2D" parent="World/TopLeftRoom"]
+position = Vector2(32, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopLeftRoom/Floor"]
+shape = SubResource("RectangleShape2D_e3ma8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopLeftRoom/Floor"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_e3ma8")
+
+[node name="EyeOfNewt" parent="World/TopLeftRoom" instance=ExtResource("13_34ryo")]
+position = Vector2(0, 119)
+
+[node name="RightRoom" parent="World" instance=ExtResource("6_32bis")]
+position = Vector2(480, 0)
+
+[node name="Wall" type="StaticBody2D" parent="World/RightRoom"]
+position = Vector2(232, 0)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/RightRoom/Wall"]
+shape = SubResource("RectangleShape2D_lubul")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/RightRoom/Wall"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_lubul")
+
+[node name="Floor" type="StaticBody2D" parent="World/RightRoom"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/RightRoom/Floor"]
+shape = SubResource("RectangleShape2D_8tnbd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/RightRoom/Floor"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_8tnbd")
+
+[node name="Cauldron" parent="World/RightRoom" instance=ExtResource("14_07y58")]
+position = Vector2(0, 119)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/RightRoom"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/RightRoom/Ceiling"]
+shape = SubResource("RectangleShape2D_22icm")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/RightRoom/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("8_fvj8u")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/RightRoom"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/RightRoom/Ceiling2"]
+shape = SubResource("RectangleShape2D_22icm")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/RightRoom/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("8_fvj8u")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/RightRoom"]
+position = Vector2(-232, -32)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/RightRoom/Wall2"]
+shape = SubResource("RectangleShape2D_mt8ka")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/RightRoom/Wall2"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_mt8ka")
+
+[node name="Mouse" parent="World/RightRoom" instance=ExtResource("15_o5hr5")]
+position = Vector2(-240, 119)
+
+[node name="TopRightRoom" parent="World" instance=ExtResource("6_32bis")]
+position = Vector2(480, -270)
+
+[node name="JumpScare" parent="World/TopRightRoom" instance=ExtResource("16_46kpy")]
+
+[node name="Wall" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(232, 0)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Wall"]
+shape = SubResource("RectangleShape2D_lubul")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Wall"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_lubul")
+
+[node name="Ceiling" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Ceiling"]
+shape = SubResource("RectangleShape2D_8tnbd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Ceiling"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_8tnbd")
+
+[node name="Orchid" parent="World/TopRightRoom" instance=ExtResource("17_qmjoa")]
+position = Vector2(-140, 119)
+
+[node name="Floor" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Floor"]
+shape = SubResource("RectangleShape2D_22icm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Floor"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_18wdw")
+
+[node name="Floor2" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Floor2"]
+shape = SubResource("RectangleShape2D_22icm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Floor2"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_18wdw")
+
+[node name="TopRoom" parent="World" instance=ExtResource("6_32bis")]
+position = Vector2(0, -270)
+
+[node name="HideAndSeek" parent="World/TopRoom" instance=ExtResource("18_0unxo")]
+
+[node name="Ceiling" type="StaticBody2D" parent="World/TopRoom"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRoom/Ceiling"]
+shape = SubResource("RectangleShape2D_8tnbd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRoom/Ceiling"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_8tnbd")
+
+[node name="Floor" type="StaticBody2D" parent="World/TopRoom"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRoom/Floor"]
+shape = SubResource("RectangleShape2D_22icm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRoom/Floor"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_18wdw")
+
+[node name="Floor2" type="StaticBody2D" parent="World/TopRoom"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRoom/Floor2"]
+shape = SubResource("RectangleShape2D_22icm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRoom/Floor2"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_18wdw")
+
+[node name="Pillar" type="StaticBody2D" parent="World/TopRoom"]
+position = Vector2(-136, 119)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRoom/Pillar"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_0hhq7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/TopRoom/Pillar"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_bgt3b")
+
+[node name="Pillar2" type="StaticBody2D" parent="World/TopRoom"]
+position = Vector2(136, 119)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRoom/Pillar2"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_0hhq7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/TopRoom/Pillar2"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_bgt3b")
+frame = 1
+
+[node name="Toadstool" parent="World/TopRoom" instance=ExtResource("20_ormnd")]
+position = Vector2(200, 119)
+
+[node name="Bridge" parent="World/TopRoom" instance=ExtResource("21_0gk54")]
+position = Vector2(0, 119)
+
+[node name="DewDropSpawner" parent="World" instance=ExtResource("22_p0a6f")]
+position = Vector2(-418, 20)
+
+[node name="Debug" type="CanvasLayer" parent="."]
+script = ExtResource("22_0qi1j")
+
+[node name="CatState" type="Label" parent="Debug"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("23_421bu")
+text = "Cat is WANDERING"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("24_1tnci")
+
+[node name="MessageText" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -26.0
+offset_right = 57.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("25_2ag65")
+text = "Message goes here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionText" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = 2.0
+offset_right = 40.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("25_2ag65")
+text = "Press E to Do"
+vertical_alignment = 1
+
+[node name="CatText" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_right = 40.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("25_2ag65")
+text = "Cat Go Meow"
+horizontal_alignment = 1
+vertical_alignment = 1
