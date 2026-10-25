@@ -15,4 +15,4 @@ func handle_behavior(delta: float) -> void:
 	Statics.hud.update_cat_text("DETECTION: %s/100" % [int((detection / max_detection) * 100.0)])
 	
 	if detection >= max_detection:
-		GameManager.reset()
+		Statics.player.kill()
