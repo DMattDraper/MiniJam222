@@ -121,4 +121,6 @@ func _on_hurtbox_body_entered(body):
 		body.kill()
 
 func deactivate() -> void:
+	super()
+	peeking_timer.stop()
 	eye.hide()

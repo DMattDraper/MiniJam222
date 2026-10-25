@@ -1,6 +1,10 @@
 extends Node
 
 func die() -> void:
+	var behavior := Statics.world.current_room.cat_behavior
+	if behavior:
+		behavior.deactivate()
+	
 	Statics.player.item_holder.drop()
 	Statics.player.position = Statics.player.starting_position
 	
@@ -8,6 +12,8 @@ func die() -> void:
 	for item in items:
 		if item is Item and item.reset_on_death:
 			item.reset()
+	
+	Statics.cat.change_state(Cat.STATES.WANDERING)
 	
 	Statics.hud.update_message_text("You were caught by the Cat! Don't give up!")
 

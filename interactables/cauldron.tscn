@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvh7v6502hlno"]
+[gd_scene load_steps=5 format=3 uid="uid://dvh7v6502hlno"]
 
 [ext_resource type="Script" uid="uid://ideabudafyju" path="res://interactables/cauldron.gd" id="1_4s5cx"]
 [ext_resource type="SpriteFrames" uid="uid://de3mvnwfesx3f" path="res://interactables/cauldron_spriteframes.tres" id="2_1hvhj"]
+[ext_resource type="SpriteFrames" uid="uid://duk6dwr8p5ikj" path="res://items/item_spriteframes.tres" id="3_qk2wy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gndq0"]
 size = Vector2(32, 30)
@@ -20,3 +21,35 @@ shape = SubResource("RectangleShape2D_gndq0")
 position = Vector2(0, -30)
 sprite_frames = ExtResource("2_1hvhj")
 autoplay = "default"
+
+[node name="Icons" type="Node2D" parent="."]
+position = Vector2(0, -112)
+
+[node name="Feather" type="AnimatedSprite2D" parent="Icons"]
+modulate = Color(0, 0, 0, 0.470588)
+position = Vector2(0, 8)
+sprite_frames = ExtResource("3_qk2wy")
+
+[node name="EyeOfNewt" type="AnimatedSprite2D" parent="Icons"]
+modulate = Color(0, 0, 0, 0.470588)
+position = Vector2(-48, 34)
+sprite_frames = ExtResource("3_qk2wy")
+frame = 1
+
+[node name="Toadstool" type="AnimatedSprite2D" parent="Icons"]
+modulate = Color(0, 0, 0, 0.470588)
+position = Vector2(48, 34)
+sprite_frames = ExtResource("3_qk2wy")
+frame = 2
+
+[node name="DewDrop" type="AnimatedSprite2D" parent="Icons"]
+modulate = Color(0, 0, 0, 0.470588)
+position = Vector2(-72, 66)
+sprite_frames = ExtResource("3_qk2wy")
+frame = 4
+
+[node name="Orchid" type="AnimatedSprite2D" parent="Icons"]
+modulate = Color(0, 0, 0, 0.470588)
+position = Vector2(72, 66)
+sprite_frames = ExtResource("3_qk2wy")
+frame = 3

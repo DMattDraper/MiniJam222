@@ -14,6 +14,7 @@ script = ExtResource("1_vlpcm")
 [node name="CameraAnchor" type="Marker2D" parent="."]
 
 [node name="BoundingBox" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoundingBox"]

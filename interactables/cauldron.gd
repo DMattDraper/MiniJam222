@@ -1,6 +1,11 @@
 class_name Cauldron extends Interactable
 
 var item_count := 0
+@onready var feather: AnimatedSprite2D = $Icons/Feather
+@onready var eye_of_newt: AnimatedSprite2D = $Icons/EyeOfNewt
+@onready var toadstool: AnimatedSprite2D = $Icons/Toadstool
+@onready var dew_drop: AnimatedSprite2D = $Icons/DewDrop
+@onready var orchid: AnimatedSprite2D = $Icons/Orchid
 
 func interact(item: Item) -> bool:
 	if item == null:
@@ -22,6 +27,7 @@ func interact(item: Item) -> bool:
 	Statics.hud.update_message_text("Added %s to the cauldron!" % [item.item_name])
 	item.added_to_cauldron = true
 	item_count += 1
+	update_icons(item)
 	
 	if item_count == 5:
 		Statics.hud.update_message_text("You win!")
@@ -41,3 +47,15 @@ func is_valid_type(item: Item) -> bool:
 		return true
 	
 	return false
+
+func update_icons(item: Item) -> void:
+	if item is Feather:
+		feather.modulate = Color.WHITE
+	if item is EyeOfNewt:
+		eye_of_newt.modulate = Color.WHITE
+	if item is Orchid:
+		orchid.modulate = Color.WHITE
+	if item is Toadstool:
+		toadstool.modulate = Color.WHITE
+	if item is DewDropHolder:
+		dew_drop.modulate = Color.WHITE
