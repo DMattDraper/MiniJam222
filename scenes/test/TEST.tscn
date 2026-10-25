@@ -44,13 +44,13 @@ size = Vector2(16, 270)
 [sub_resource type="QuadMesh" id="QuadMesh_lubul"]
 size = Vector2(16, 270)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv13t"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vppd"]
 albedo_texture = ExtResource("6_w1i8c")
 albedo_texture_force_srgb = true
 metallic_specular = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_8tnbd"]
-material = SubResource("StandardMaterial3D_xv13t")
+material = SubResource("StandardMaterial3D_8vppd")
 size = Vector2(480, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18wdw"]
