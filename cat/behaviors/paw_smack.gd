@@ -72,4 +72,4 @@ func deactivate() -> void:
 
 func _on_paw_body_entered(body: Node2D) -> void:
 	if body is Player and state == STATES.ATTACKING:
-		GameManager.call_deferred("reset")
+		body.kill()

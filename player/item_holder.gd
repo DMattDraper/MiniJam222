@@ -44,12 +44,18 @@ func interact() -> void:
 		pickup(target)
 
 func pickup(target: Item) -> void:
+	if target == null:
+		return
+	
 	held_item = target
 	held_item.grab()
 	held_item.held = true
 	held_item.z_index += 1
 
 func drop() -> void:
+	if held_item == null:
+		return
+	
 	held_item.velocity += body.velocity
 	held_item.drop()
 	held_item.held = false

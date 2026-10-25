@@ -107,5 +107,6 @@ func find_origin_point() -> bool:
 			return true
 	return false
 
-func _on_hurtbox_body_entered(_body):
-	GameManager.call_deferred("reset")
+func _on_hurtbox_body_entered(body):
+	if body is Player:
+		body.kill()
