@@ -1,5 +1,10 @@
 extends Node
 
+@onready var main : Main
+
+@onready var main_menu : MainMenu
+@onready var world : Node
+
 func die() -> void:
 	var behavior := Statics.world.current_room.cat_behavior
 	if behavior:
@@ -24,3 +29,14 @@ func reset() -> void:
 	Orchid.added_to_cauldron = false
 	Toadstool.added_to_cauldron = false
 	get_tree().reload_current_scene()
+
+func start_game() -> void:
+	
+	main.remove_child(main_menu)
+	main.add_child(world)
+
+func win_game() -> void:
+	pass
+
+func end_game() -> void:
+	pass

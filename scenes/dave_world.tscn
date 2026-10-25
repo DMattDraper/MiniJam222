@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://2ik8se7bqd1f"]
+[gd_scene load_steps=41 format=3 uid="uid://2ik8se7bqd1f"]
 
 [ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_3ul32"]
 [ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_ufvyr"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://hum6qfrdoler" path="res://bird/bird.tscn" id="8_43356"]
 [ext_resource type="Texture2D" uid="uid://d0ollr2236etb" path="res://environment/box.png" id="8_a8f8y"]
 [ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="8_lwnpy"]
-[ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="8_uwhj7"]
 [ext_resource type="Script" uid="uid://cbq73f5yf14d5" path="res://ui/hud.gd" id="9_43356"]
 [ext_resource type="PackedScene" uid="uid://0642e22uddyd" path="res://items/worm.tscn" id="10_0t3ck"]
 [ext_resource type="Theme" uid="uid://bc3b833woaf0h" path="res://ui/hud_theme.tres" id="10_vb1ll"]
@@ -2516,7 +2515,7 @@ offset_top = -23.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("8_uwhj7")
+theme = ExtResource("10_vb1ll")
 text = "Cat is WANDERING"
 
 [node name="HUD" type="CanvasLayer" parent="."]
