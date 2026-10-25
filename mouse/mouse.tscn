@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://drxcxmgmc8j24"]
+[gd_scene load_steps=9 format=3 uid="uid://drxcxmgmc8j24"]
 
 [ext_resource type="Script" uid="uid://br2r3mbqqsitr" path="res://mouse/mouse.gd" id="1_vbr1e"]
 [ext_resource type="Script" uid="uid://b2t8xqmb5ve0w" path="res://mouse/butt.gd" id="2_784w7"]
 [ext_resource type="SpriteFrames" uid="uid://c3trcfucrtpi4" path="res://mouse/mouse_spriteframes.tres" id="2_sfc1b"]
 [ext_resource type="Texture2D" uid="uid://c8xafaecbde8f" path="res://mouse/tail.png" id="4_f0xux"]
+[ext_resource type="AudioStream" uid="uid://h51gm5lv7i1c" path="res://mouse/mouse_scare.ogg" id="5_pse3o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfc1b"]
 radius = 22.0907
@@ -46,3 +47,7 @@ shape = SubResource("RectangleShape2D_vbr1e")
 [node name="Sprite2D" type="Sprite2D" parent="Butt"]
 position = Vector2(16, 0)
 texture = ExtResource("4_f0xux")
+
+[node name="SqueakSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_pse3o")
+bus = &"SFX"

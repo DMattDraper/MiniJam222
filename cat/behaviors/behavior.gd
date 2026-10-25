@@ -24,6 +24,7 @@ func handle_behavior(_delta: float) -> void:
 
 func activate() -> void:
 	active = true
+	Statics.cat.play_alert_sound()
 
 func deactivate() -> void:
 	active = false

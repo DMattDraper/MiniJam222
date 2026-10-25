@@ -22,6 +22,8 @@ func jump() -> float:
 		if body.item_holder.held_item is Bridge:
 			applied_jump_force /= 4.0
 		body.velocity.y = applied_jump_force
+		$"../JumpSound".pitch_scale = randf_range(0.75, 1.25)
+		$"../JumpSound".play()
 		return applied_jump_force
 	return 0.0
 

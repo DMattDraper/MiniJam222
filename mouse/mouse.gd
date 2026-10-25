@@ -28,6 +28,7 @@ func _physics_process(_delta: float) -> void:
 
 func scare():
 	sprite.play("run")
+	$SqueakSound.play()
 	collision_layer = 0
 	direction = -1.0
 	if (flipped):

@@ -51,6 +51,7 @@ func start_seek() -> void:
 	ray_cast.position.x = Statics.game_screen_width / 2.0
 	Statics.hud.update_cat_text("DON'T MOVE!")
 	graphics.play("attack")
+	$SnarlSound.play()
 
 func stop_seek() -> void:
 	seeking = false
