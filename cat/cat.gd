@@ -1,8 +1,5 @@
 class_name Cat extends Node
 
-# TODO: Remove, temporary
-const BLACK_CAT = preload("res://cat/black_cat.png")
-
 enum STATES {
 	WANDERING,
 	SEARCHING,
@@ -42,14 +39,12 @@ func _process(_delta: float) -> void:
 		
 		current_room = rooms[i]
 		current_room.is_cat_present = true
-		current_room.background.texture = BLACK_CAT
 
 func change_state(new_state: STATES) -> void:
-	if state == STATES.ATTACKING:
+	if state == STATES.ATTACKING and new_state != STATES.DISTRACTED:
 		current_room.deactivate()
 	
 	state = new_state
-	Statics.debug.set_cat_state_label(STATES.find_key(state))
 	match (state):
 		STATES.WANDERING:
 			timer.wait_time = wander_time
@@ -113,10 +108,10 @@ func change_room() -> void:
 			next_room = Statics.world.get_room_by_index(current_room.index_x + x_offset, current_room.index_y + y_offset)
 	
 	current_room.is_cat_present = false
-	current_room.background.texture = null
 	
 	next_room.is_cat_present = true
-	next_room.background.texture = BLACK_CAT
 	
 	current_room = next_room
 	current_room.meow.play()
+	
+	Statics.debug.set_cat_state_label("%s, %s" % [current_room.index_x, current_room.index_y])

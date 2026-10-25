@@ -62,13 +62,14 @@ func activate() -> void:
 	super()
 	state = STATES.IDLE
 	timer.start()
-	
+	graphics.play("appear")
 
 func deactivate() -> void:
 	super()
 	state = STATES.IDLE
 	animation_player.play("RESET")
 	timer.stop()
+	graphics.play("disappear")
 
 func _on_paw_body_entered(body: Node2D) -> void:
 	if body is Player and state == STATES.ATTACKING:
