@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://yano1s503sro" path="res://items/dew_drop.gd" id="1_ugghc"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_542dk"]
+radius = 12.0
+
 [sub_resource type="SphereMesh" id="SphereMesh_542dk"]
 radius = 12.0
 height = 24.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_542dk"]
-radius = 12.0
 
 [sub_resource type="Animation" id="Animation_pvmlu"]
 length = 0.001
@@ -65,12 +65,12 @@ collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_ugghc")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_542dk")
+
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.0941176, 1, 1, 1)
 mesh = SubResource("SphereMesh_542dk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_542dk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
