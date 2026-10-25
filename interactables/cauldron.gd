@@ -24,6 +24,7 @@ func interact(item: Item) -> bool:
 		Statics.hud.update_message_text("You don't need another one of these...")
 		return false
 	
+	$AddSound.play()
 	Statics.hud.update_message_text("Added %s to the cauldron!" % [item.item_name])
 	item.added_to_cauldron = true
 	item_count += 1

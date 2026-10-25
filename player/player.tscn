@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://xoj8m0vm50nd"]
+[gd_scene load_steps=9 format=3 uid="uid://xoj8m0vm50nd"]
 
 [ext_resource type="Script" uid="uid://8bu57mmor5is" path="res://player/player_mover/player_mover.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://34vq6b8mde86" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://l5d4ld4fhbvg" path="res://player/item_holder.gd" id="3_g1dw6"]
 [ext_resource type="SpriteFrames" uid="uid://c5f3grsm5gt1d" path="res://player/player_spriteframes.tres" id="3_yw30f"]
+[ext_resource type="AudioStream" uid="uid://kbdmgotoer5y" path="res://player/player_jump.ogg" id="5_qjkh3"]
+[ext_resource type="AudioStream" uid="uid://ckmwke5y8w5rr" path="res://player/player_die.ogg" id="6_g6k8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_duas1"]
 size = Vector2(24, 24)
@@ -42,3 +44,11 @@ position = Vector2(0, 12)
 target_position = Vector2(0, 0)
 collision_mask = 48
 hit_from_inside = true
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qjkh3")
+bus = &"SFX"
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_g6k8r")
+bus = &"SFX"

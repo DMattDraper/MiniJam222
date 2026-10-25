@@ -38,6 +38,7 @@ func fly_into_room() -> void:
 	spawn_feather()
 	eat_worm()
 	Statics.hud.update_message_text("A good trade!")
+	$FlutterSound.play()
 
 func spawn_feather() -> void:
 	var feather_inst = feather_scene.instantiate()
