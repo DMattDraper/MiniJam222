@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c3trcfucrtpi4"]
+
+[ext_resource type="Texture2D" uid="uid://b5guny1rou1yn" path="res://mouse/mouse.png" id="1_k7jsj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0xux"]
+atlas = ExtResource("1_k7jsj")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfc1b"]
+atlas = ExtResource("1_k7jsj")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pse3o"]
+atlas = ExtResource("1_k7jsj")
+region = Rect2(192, 0, 96, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0xux")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfc1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pse3o")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]

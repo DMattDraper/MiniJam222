@@ -1,6 +1,7 @@
 class_name Mouse extends CharacterBody2D
 
 @onready var butt: CharacterBody2D = $Butt
+@onready var sprite: AnimatedSprite2D = $Sprite
 
 @export var flipped := false
 @export var max_speed := 500.0
@@ -26,6 +27,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func scare():
+	sprite.play("run")
 	collision_layer = 0
 	direction = -1.0
 	if (flipped):
