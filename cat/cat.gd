@@ -106,6 +106,8 @@ func change_room() -> void:
 			var x_offset =  clamp(Statics.world.current_room.index_x - current_room.index_x, -1, 1)
 			var y_offset =  clamp(Statics.world.current_room.index_y - current_room.index_y, -1, 1)
 			next_room = Statics.world.get_room_by_index(current_room.index_x + x_offset, current_room.index_y + y_offset)
+			if next_room == null:
+				next_room = Statics.world.get_room_by_index(current_room.index_x + x, current_room.index_y + y)
 	
 	current_room.is_cat_present = false
 	
