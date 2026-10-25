@@ -21,4 +21,4 @@ shape = SubResource("RectangleShape2D_hs4yg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = ExtResource("2_cfa0q")
-frame = 4
+frame = 3
