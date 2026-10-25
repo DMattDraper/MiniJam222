@@ -52,4 +52,5 @@ func _process(_delta: float) -> void:
 			sprite.play("idle")
 
 func kill():
+	$HurtSound.play()
 	GameManager.call_deferred("die")

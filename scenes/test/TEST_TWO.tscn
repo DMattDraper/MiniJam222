@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="6_at0bn"]
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="7_3gt05"]
 [ext_resource type="PackedScene" uid="uid://bjf4yd37w5u1p" path="res://cat/behaviors/Pawing.tscn" id="7_ubqgd"]
-[ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="8_quq6g"]
+[ext_resource type="FontFile" uid="uid://bgqmdpbt5s7rh" path="res://ui/8bitOperatorPlus-Regular.fnt" id="8_quq6g"]
 [ext_resource type="Script" uid="uid://cbq73f5yf14d5" path="res://ui/hud.gd" id="10_xgxbx"]
 [ext_resource type="Theme" uid="uid://bc3b833woaf0h" path="res://ui/hud_theme.tres" id="11_00i5c"]
 

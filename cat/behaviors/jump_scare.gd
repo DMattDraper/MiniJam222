@@ -25,6 +25,7 @@ func handle_behavior(delta: float) -> void:
 	
 	if detection >= max_detection:
 		Statics.player.kill()
+		$SnarlSound.play()
 
 func activate() -> void:
 	super()

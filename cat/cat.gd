@@ -114,6 +114,8 @@ func change_room() -> void:
 	next_room.is_cat_present = true
 	
 	current_room = next_room
-	current_room.meow.play()
 	
 	Statics.debug.set_cat_state_label("%s, %s" % [current_room.index_x, current_room.index_y])
+
+func play_alert_sound() -> void:
+	$AlertSound.play()

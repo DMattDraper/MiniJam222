@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvh7v6502hlno"]
+[gd_scene load_steps=7 format=3 uid="uid://dvh7v6502hlno"]
 
 [ext_resource type="Script" uid="uid://ideabudafyju" path="res://interactables/cauldron.gd" id="1_4s5cx"]
 [ext_resource type="SpriteFrames" uid="uid://de3mvnwfesx3f" path="res://interactables/cauldron_spriteframes.tres" id="2_1hvhj"]
 [ext_resource type="SpriteFrames" uid="uid://duk6dwr8p5ikj" path="res://items/item_spriteframes.tres" id="3_qk2wy"]
+[ext_resource type="AudioStream" uid="uid://cp6uc326k7wk1" path="res://interactables/cauldron_loop.ogg" id="4_2ackk"]
+[ext_resource type="AudioStream" uid="uid://bvophh5x78bho" path="res://interactables/cauldron_add.ogg" id="4_kp8af"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gndq0"]
 size = Vector2(32, 30)
@@ -53,3 +55,12 @@ modulate = Color(0, 0, 0, 0.470588)
 position = Vector2(72, 66)
 sprite_frames = ExtResource("3_qk2wy")
 frame = 3
+
+[node name="BubbleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2ackk")
+autoplay = true
+bus = &"SFX"
+
+[node name="AddSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kp8af")
+bus = &"SFX"

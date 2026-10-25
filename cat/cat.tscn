@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuwmkk78jyyvn"]
+[gd_scene load_steps=3 format=3 uid="uid://cuwmkk78jyyvn"]
 
 [ext_resource type="Script" uid="uid://dm7dlfp6a1hj1" path="res://cat/cat.gd" id="1_vgj48"]
+[ext_resource type="AudioStream" uid="uid://be6tentfv6ak1" path="res://cat/cat_snarl.ogg" id="2_vgj48"]
 
 [node name="Cat" type="Node"]
 script = ExtResource("1_vgj48")
+
+[node name="AlertSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vgj48")
+bus = &"SFX"
