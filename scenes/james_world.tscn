@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dhayqhx0fgunw" path="res://environment/wood_tile.png" id="7_2ov4n"]
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="7_70yr0"]
 [ext_resource type="PackedScene" uid="uid://b7m643dv6ky1w" path="res://environment/block.tscn" id="8_r41n4"]
-[ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="8_wr0d1"]
+[ext_resource type="FontFile" uid="uid://bgqmdpbt5s7rh" path="res://ui/8bitOperatorPlus-Regular.fnt" id="8_wr0d1"]
 [ext_resource type="Script" uid="uid://cbq73f5yf14d5" path="res://ui/hud.gd" id="9_m7clp"]
 [ext_resource type="PackedScene" uid="uid://cbugdx0hj2nv8" path="res://items/bridge.tscn" id="9_o2gkb"]
 [ext_resource type="PackedScene" uid="uid://drgjcpixmqgwe" path="res://cat/behaviors/hide_and_seek.tscn" id="10_6hwn3"]
@@ -755,6 +755,9 @@ texture = SubResource("CompressedTexture2D_dqvtl")
 region_enabled = true
 region_rect = Rect2(120, 0, 120, 16)
 
+[node name="Block" parent="World/Room-3_-2" instance=ExtResource("8_r41n4")]
+position = Vector2(-205, 87)
+
 [node name="Room-4_-3" parent="World" instance=ExtResource("6_6hwn3")]
 position = Vector2(-1920, -810)
 metadata/_edit_lock_ = true
@@ -1251,7 +1254,52 @@ region_enabled = true
 region_rect = Rect2(0, 0, 270, 16)
 
 [node name="DewDropHolder" parent="World/Room-4_-5" instance=ExtResource("12_wr0d1")]
-position = Vector2(-136, 119)
+position = Vector2(0, -72)
+
+[node name="Block" parent="World/Room-4_-5" instance=ExtResource("8_r41n4")]
+position = Vector2(-88, 86)
+
+[node name="Block2" parent="World/Room-4_-5" instance=ExtResource("8_r41n4")]
+position = Vector2(88, 86)
+
+[node name="Floor7" type="StaticBody2D" parent="World/Room-4_-5"]
+position = Vector2(-170, -11)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-5/Floor7"]
+shape = SubResource("RectangleShape2D_fi2p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-5/Floor7"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Floor9" type="StaticBody2D" parent="World/Room-4_-5"]
+position = Vector2(0, -64)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-5/Floor9"]
+shape = SubResource("RectangleShape2D_fi2p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-5/Floor9"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Floor8" type="StaticBody2D" parent="World/Room-4_-5"]
+position = Vector2(170, -11)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-5/Floor8"]
+shape = SubResource("RectangleShape2D_fi2p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-5/Floor8"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
 
 [node name="Room-5_-1" parent="World" instance=ExtResource("6_6hwn3")]
 position = Vector2(-2400, -270)
