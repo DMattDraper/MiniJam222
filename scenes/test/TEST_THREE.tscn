@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bddc023tyfdld"]
+[gd_scene load_steps=59 format=3 uid="uid://bddc023tyfdld"]
 
 [ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_sl60e"]
 [ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_p0a6f"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ch8p5ht7gs3xi" path="res://items/feather.tscn" id="11_urkxm"]
 [ext_resource type="PackedScene" uid="uid://bd3qr6kdf3d0c" path="res://cat/behaviors/paw_smack.tscn" id="12_khtpl"]
 [ext_resource type="PackedScene" uid="uid://cxvch7jovw5y8" path="res://items/eye_of_newt.tscn" id="13_34ryo"]
+[ext_resource type="PackedScene" uid="uid://0642e22uddyd" path="res://items/worm.tscn" id="14_1mgsx"]
 [ext_resource type="PackedScene" uid="uid://dvh7v6502hlno" path="res://interactables/cauldron.tscn" id="14_07y58"]
 [ext_resource type="PackedScene" uid="uid://drxcxmgmc8j24" path="res://mouse/mouse.tscn" id="15_o5hr5"]
 [ext_resource type="PackedScene" uid="uid://qnclqcxq4uub" path="res://cat/behaviors/jump_scare.tscn" id="16_46kpy"]
@@ -24,6 +25,7 @@
 [ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="22_0qi1j"]
 [ext_resource type="PackedScene" uid="uid://cxslalxvm1cgo" path="res://items/dew_drop_spawner.tscn" id="22_p0a6f"]
 [ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="23_421bu"]
+[ext_resource type="PackedScene" uid="uid://hum6qfrdoler" path="res://bird/bird.tscn" id="23_n868h"]
 [ext_resource type="Script" uid="uid://cbq73f5yf14d5" path="res://ui/hud.gd" id="24_1tnci"]
 [ext_resource type="Theme" uid="uid://bc3b833woaf0h" path="res://ui/hud_theme.tres" id="25_2ag65"]
 
@@ -66,6 +68,13 @@ size = Vector2(416, 16)
 [sub_resource type="QuadMesh" id="QuadMesh_e3ma8"]
 size = Vector2(416, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0a6f"]
+size = Vector2(400, 16)
+
+[sub_resource type="QuadMesh" id="QuadMesh_n868h"]
+material = SubResource("StandardMaterial3D_xv13t")
+size = Vector2(400, 16)
+
 [sub_resource type="QuadMesh" id="QuadMesh_18wdw"]
 size = Vector2(208, 16)
 
@@ -100,6 +109,36 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n868h"]
+size = Vector2(400, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1mgsx"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nulyg"]
+size = Vector2(270, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_32bis"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32bis"]
+size = Vector2(200, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_78ex5"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mgsx"]
+size = Vector2(480, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nulyg"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78ex5"]
+size = Vector2(480, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fvj8u"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
 
 [node name="TEST" type="Node"]
 
@@ -333,6 +372,9 @@ mesh = SubResource("QuadMesh_e3ma8")
 [node name="EyeOfNewt" parent="World/TopLeftRoom" instance=ExtResource("13_34ryo")]
 position = Vector2(0, 119)
 
+[node name="Worm" parent="World/TopLeftRoom" instance=ExtResource("14_1mgsx")]
+position = Vector2(141, 117)
+
 [node name="RightRoom" parent="World" instance=ExtResource("6_32bis")]
 position = Vector2(480, 0)
 
@@ -422,11 +464,13 @@ position = Vector2(0, -127)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Ceiling"]
-shape = SubResource("RectangleShape2D_8tnbd")
+position = Vector2(-40, 0)
+shape = SubResource("RectangleShape2D_p0a6f")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Ceiling"]
 modulate = Color(0, 0, 0, 1)
-mesh = SubResource("QuadMesh_8tnbd")
+position = Vector2(-40, 0)
+mesh = SubResource("QuadMesh_n868h")
 
 [node name="Orchid" parent="World/TopRightRoom" instance=ExtResource("17_qmjoa")]
 position = Vector2(-140, 119)
@@ -452,6 +496,70 @@ shape = SubResource("RectangleShape2D_22icm")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Floor2"]
 modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_18wdw")
+
+[node name="Block" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(64, 87)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Block"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopRightRoom/Block"]
+texture = ExtResource("10_8pmj4")
+
+[node name="Block3" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(192, 24)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Block3"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopRightRoom/Block3"]
+texture = ExtResource("10_8pmj4")
+
+[node name="Block4" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(192, -40)
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Block4"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_22icm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Block4"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Block2" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(128, 87)
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Block2"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_22icm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Block2"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Block5" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(128, 23)
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Block5"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_22icm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Block5"]
+shape = SubResource("RectangleShape2D_18wdw")
+
+[node name="Block6" type="StaticBody2D" parent="World/TopRightRoom"]
+position = Vector2(192, 87)
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/TopRightRoom/Block6"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_22icm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopRightRoom/Block6"]
+shape = SubResource("RectangleShape2D_18wdw")
 
 [node name="TopRoom" parent="World" instance=ExtResource("6_32bis")]
 position = Vector2(0, -270)
@@ -526,6 +634,123 @@ position = Vector2(0, 119)
 
 [node name="DewDropSpawner" parent="World" instance=ExtResource("22_p0a6f")]
 position = Vector2(-418, 20)
+
+[node name="TopMostRightRoom" parent="World" instance=ExtResource("6_32bis")]
+position = Vector2(480, -540)
+
+[node name="Floor" type="StaticBody2D" parent="World/TopMostRightRoom"]
+position = Vector2(-40, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopMostRightRoom/Floor"]
+shape = SubResource("RectangleShape2D_n868h")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopMostRightRoom/Floor"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_1mgsx")
+region_enabled = true
+region_rect = Rect2(0, 0, 400, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/TopMostRightRoom"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopMostRightRoom/Wall"]
+shape = SubResource("RectangleShape2D_nulyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopMostRightRoom/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_32bis")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/TopMostRightRoom"]
+position = Vector2(-232, -35)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopMostRightRoom/Wall2"]
+shape = SubResource("RectangleShape2D_32bis")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopMostRightRoom/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_78ex5")
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/TopMostRightRoom"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopMostRightRoom/Ceiling"]
+shape = SubResource("RectangleShape2D_1mgsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopMostRightRoom/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_nulyg")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Bird" parent="World/TopMostRightRoom" instance=ExtResource("23_n868h")]
+position = Vector2(157, -68)
+
+[node name="TopMostCenterRoom2" parent="World" instance=ExtResource("6_32bis")]
+position = Vector2(0, -540)
+
+[node name="Floor" type="StaticBody2D" parent="World/TopMostCenterRoom2"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopMostCenterRoom2/Floor"]
+shape = SubResource("RectangleShape2D_78ex5")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopMostCenterRoom2/Floor"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_fvj8u")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/TopMostCenterRoom2"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopMostCenterRoom2/Wall"]
+shape = SubResource("RectangleShape2D_nulyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopMostCenterRoom2/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_32bis")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/TopMostCenterRoom2"]
+position = Vector2(232, -35)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopMostCenterRoom2/Wall2"]
+shape = SubResource("RectangleShape2D_32bis")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopMostCenterRoom2/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_78ex5")
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/TopMostCenterRoom2"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/TopMostCenterRoom2/Ceiling"]
+shape = SubResource("RectangleShape2D_1mgsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/TopMostCenterRoom2/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_nulyg")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
 
 [node name="Debug" type="CanvasLayer" parent="."]
 script = ExtResource("22_0qi1j")
