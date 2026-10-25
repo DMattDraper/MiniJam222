@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bddc023tyfdld"]
+[gd_scene load_steps=60 format=3 uid="uid://bddc023tyfdld"]
 
 [ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_sl60e"]
 [ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_p0a6f"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dhayqhx0fgunw" path="res://environment/wood_tile.png" id="8_fvj8u"]
 [ext_resource type="PackedScene" uid="uid://bnoc23eukbkvi" path="res://items/dew_drop_holder.tscn" id="9_g15t0"]
 [ext_resource type="Texture2D" uid="uid://d0ollr2236etb" path="res://environment/box.png" id="10_8pmj4"]
+[ext_resource type="PackedScene" uid="uid://b7m643dv6ky1w" path="res://environment/block.tscn" id="10_nulyg"]
 [ext_resource type="PackedScene" uid="uid://ch8p5ht7gs3xi" path="res://items/feather.tscn" id="11_urkxm"]
 [ext_resource type="PackedScene" uid="uid://bd3qr6kdf3d0c" path="res://cat/behaviors/paw_smack.tscn" id="12_khtpl"]
 [ext_resource type="PackedScene" uid="uid://cxvch7jovw5y8" path="res://items/eye_of_newt.tscn" id="13_34ryo"]
@@ -253,15 +254,8 @@ shape = SubResource("RectangleShape2D_8tnbd")
 modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_8tnbd")
 
-[node name="Block" type="StaticBody2D" parent="World/LeftRoom"]
+[node name="Block" parent="World/LeftRoom" instance=ExtResource("10_nulyg")]
 position = Vector2(-192, 87)
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftRoom/Block"]
-shape = SubResource("RectangleShape2D_18wdw")
-
-[node name="Sprite2D" type="Sprite2D" parent="World/LeftRoom/Block"]
-texture = ExtResource("10_8pmj4")
 
 [node name="Block3" type="StaticBody2D" parent="World/LeftRoom"]
 position = Vector2(-192, 23)

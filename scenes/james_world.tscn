@@ -1,0 +1,3244 @@
+[gd_scene load_steps=97 format=3 uid="uid://dni5nokmu26od"]
+
+[ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_fumd2"]
+[ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_2ov4n"]
+[ext_resource type="PackedScene" uid="uid://xoj8m0vm50nd" path="res://player/player.tscn" id="3_r41n4"]
+[ext_resource type="PackedScene" uid="uid://cuwmkk78jyyvn" path="res://cat/cat.tscn" id="4_fsvxl"]
+[ext_resource type="Script" uid="uid://ciouekhiw2gmq" path="res://scenes/world.gd" id="5_o2gkb"]
+[ext_resource type="PackedScene" uid="uid://km0xdn7hk1o3" path="res://scenes/rooms/room.tscn" id="6_6hwn3"]
+[ext_resource type="Texture2D" uid="uid://dhayqhx0fgunw" path="res://environment/wood_tile.png" id="7_2ov4n"]
+[ext_resource type="Script" uid="uid://c2hab5ejua6gw" path="res://ui/debug.gd" id="7_70yr0"]
+[ext_resource type="PackedScene" uid="uid://b7m643dv6ky1w" path="res://environment/block.tscn" id="8_r41n4"]
+[ext_resource type="FontFile" uid="uid://dshcluccqsl8y" path="res://ui/8bitOperatorPlus-Regular.fnt" id="8_wr0d1"]
+[ext_resource type="Script" uid="uid://cbq73f5yf14d5" path="res://ui/hud.gd" id="9_m7clp"]
+[ext_resource type="PackedScene" uid="uid://cbugdx0hj2nv8" path="res://items/bridge.tscn" id="9_o2gkb"]
+[ext_resource type="PackedScene" uid="uid://drgjcpixmqgwe" path="res://cat/behaviors/hide_and_seek.tscn" id="10_6hwn3"]
+[ext_resource type="Theme" uid="uid://bc3b833woaf0h" path="res://ui/hud_theme.tres" id="10_34npq"]
+[ext_resource type="Texture2D" uid="uid://dlknbpybtnkx2" path="res://environment/barriers.png" id="11_70yr0"]
+[ext_resource type="PackedScene" uid="uid://bnoc23eukbkvi" path="res://items/dew_drop_holder.tscn" id="12_wr0d1"]
+[ext_resource type="PackedScene" uid="uid://cxslalxvm1cgo" path="res://items/dew_drop_spawner.tscn" id="13_fsvxl"]
+[ext_resource type="PackedScene" uid="uid://bd3qr6kdf3d0c" path="res://cat/behaviors/paw_smack.tscn" id="13_m7clp"]
+[ext_resource type="PackedScene" uid="uid://bmofsuglnmjre" path="res://cat/behaviors/milk_distraction.tscn" id="14_34npq"]
+[ext_resource type="PackedScene" uid="uid://drxcxmgmc8j24" path="res://mouse/mouse.tscn" id="15_dqvtl"]
+[ext_resource type="PackedScene" uid="uid://qnclqcxq4uub" path="res://cat/behaviors/jump_scare.tscn" id="16_4yll1"]
+[ext_resource type="PackedScene" uid="uid://byhnqxqrd8jd4" path="res://items/toadstool.tscn" id="16_avcdf"]
+[ext_resource type="PackedScene" uid="uid://cxvch7jovw5y8" path="res://items/eye_of_newt.tscn" id="17_13ovd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r41n4"]
+size = Vector2(480, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2gkb"]
+size = Vector2(480, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6hwn3"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqvtl"]
+size = Vector2(184, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m7clp"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsvxl"]
+size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ov4n"]
+size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drj4x"]
+size = Vector2(104, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dqvtl"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q1ki"]
+size = Vector2(164, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fsvxl"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yll1"]
+size = Vector2(68, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_13ovd"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr0d1"]
+size = Vector2(200, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avcdf"]
+size = Vector2(184, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_icc15"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13ovd"]
+size = Vector2(160, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_avcdf"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1s2w"]
+size = Vector2(68, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7fe7u"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n31ty"]
+size = Vector2(16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lp740"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86pd0"]
+size = Vector2(56, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fi2p8"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70yr0"]
+size = Vector2(242, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wr0d1"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34npq"]
+size = Vector2(100, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0xml"]
+size = Vector2(48, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n31ty"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hwn3"]
+size = Vector2(242, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_70yr0"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fe7u"]
+size = Vector2(96, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qyj4x"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icc15"]
+size = Vector2(72, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x1s2w"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0t3v"]
+size = Vector2(16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_86pd0"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp740"]
+size = Vector2(56, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l0t3v"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi2p8"]
+size = Vector2(108, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmvxp"]
+size = Vector2(100, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyj4x"]
+size = Vector2(48, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k0xml"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xnb"]
+size = Vector2(32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq42y"]
+atlas = ExtResource("11_70yr0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt8ka"]
+atlas = ExtResource("11_70yr0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaojj"]
+atlas = ExtResource("11_70yr0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3qeq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq42y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt8ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaojj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3qeq"]
+size = Vector2(32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_umda6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq42y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt8ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaojj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7clp"]
+size = Vector2(200, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_34npq"]
+load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396c.s3tc.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01se0"]
+size = Vector2(70, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umda6"]
+size = Vector2(158, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjiqu"]
+size = Vector2(308, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgabe"]
+size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_153bv"]
+size = Vector2(208, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6s345"]
+size = Vector2(238, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_068ko"]
+size = Vector2(150, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsbf2"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhhk1"]
+size = Vector2(172, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyro2"]
+size = Vector2(102, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty4qt"]
+size = Vector2(108, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0gwo"]
+size = Vector2(480, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q02nm"]
+size = Vector2(136, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnyta"]
+size = Vector2(272, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm45j"]
+size = Vector2(148, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4o1x"]
+size = Vector2(164, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pojkx"]
+size = Vector2(172, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6n2g"]
+size = Vector2(172, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43f3o"]
+size = Vector2(254, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc5x7"]
+size = Vector2(280, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5pto"]
+size = Vector2(172, 16)
+
+[node name="World" type="Node"]
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -128
+z_as_relative = false
+position = Vector2(240, 135)
+
+[node name="Parallax2D" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0, 0)
+
+[node name="Room" type="Sprite2D" parent="Background/Parallax2D"]
+texture = ExtResource("1_fumd2")
+
+[node name="Filter" type="Sprite2D" parent="Background/Parallax2D"]
+modulate = Color(1, 1, 1, 0.568627)
+texture = ExtResource("2_2ov4n")
+
+[node name="Player" parent="." instance=ExtResource("3_r41n4")]
+position = Vector2(-762, -208)
+
+[node name="Cat" parent="." instance=ExtResource("4_fsvxl")]
+
+[node name="World" type="Node" parent="."]
+script = ExtResource("5_o2gkb")
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+position = Vector2(-962, -269)
+
+[node name="Room-2_-1" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-960, -270)
+starting_room = true
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-2_-1"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_-1/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_-1/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-2_-1"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_-1/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_-1/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Block" parent="World/Room-2_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(0, 87)
+
+[node name="Block4" parent="World/Room-2_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(-128, 87)
+
+[node name="Block3" parent="World/Room-2_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(128, 87)
+
+[node name="Room-3_-1" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1440, -270)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-3_-1"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-1/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-1/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-3_-1"]
+position = Vector2(-232, -27)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-1/Wall2"]
+shape = SubResource("RectangleShape2D_dqvtl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-1/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_m7clp")
+region_enabled = true
+region_rect = Rect2(0, 0, 184, 16)
+
+[node name="Block" parent="World/Room-3_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(0, 87)
+
+[node name="Block3" parent="World/Room-3_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(64, 87)
+
+[node name="Block5" parent="World/Room-3_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(128, 87)
+
+[node name="Block4" parent="World/Room-3_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(64, 24)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-3_-1"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-1/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-1/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-3_-1"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-1/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-1/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Room-4_-1" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, -270)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-4_-1"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-4_-1"]
+position = Vector2(-121, -12)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Floor3"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-4_-1"]
+position = Vector2(-172, -77)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Floor4"]
+shape = SubResource("RectangleShape2D_drj4x")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Floor4"]
+texture = SubResource("CompressedTexture2D_dqvtl")
+region_enabled = true
+region_rect = Rect2(104, 0, 104, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-4_-1"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-4_-1"]
+position = Vector2(-96, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Ceiling"]
+shape = SubResource("RectangleShape2D_6q1ki")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_fsvxl")
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-4_-1"]
+position = Vector2(206, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Ceiling2"]
+shape = SubResource("RectangleShape2D_4yll1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Ceiling2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_13ovd")
+region_enabled = true
+region_rect = Rect2(0, 0, 68, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-4_-1"]
+position = Vector2(-232, -35)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Wall2"]
+shape = SubResource("RectangleShape2D_wr0d1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_m7clp")
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 16)
+
+[node name="Wall3" type="StaticBody2D" parent="World/Room-4_-1"]
+position = Vector2(232, -27)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-1/Wall3"]
+shape = SubResource("RectangleShape2D_avcdf")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-1/Wall3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_icc15")
+region_enabled = true
+region_rect = Rect2(0, 0, 184, 16)
+
+[node name="Block2" parent="World/Room-4_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(64, 86)
+
+[node name="Block3" parent="World/Room-4_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(64, 86)
+
+[node name="Room-4_-2" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, -540)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-4_-2"]
+position = Vector2(-96, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-2/Floor"]
+shape = SubResource("RectangleShape2D_13ovd")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-2/Floor"]
+texture = SubResource("CompressedTexture2D_avcdf")
+region_enabled = true
+region_rect = Rect2(160, 0, 160, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-4_-2"]
+position = Vector2(206, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-2/Floor2"]
+shape = SubResource("RectangleShape2D_x1s2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-2/Floor2"]
+texture = SubResource("CompressedTexture2D_7fe7u")
+region_enabled = true
+region_rect = Rect2(68, 0, 68, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-4_-2"]
+position = Vector2(24, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-2/Ceiling2"]
+shape = SubResource("RectangleShape2D_n31ty")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-2/Ceiling2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_lp740")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Ceiling3" type="StaticBody2D" parent="World/Room-4_-2"]
+position = Vector2(-196, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-2/Ceiling3"]
+shape = SubResource("RectangleShape2D_86pd0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-2/Ceiling3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_fi2p8")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Ceiling4" type="StaticBody2D" parent="World/Room-4_-2"]
+position = Vector2(212, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-2/Ceiling4"]
+shape = SubResource("RectangleShape2D_86pd0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-2/Ceiling4"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_fi2p8")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-4_-2"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-2/Wall"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-2/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Block" parent="World/Room-4_-2" instance=ExtResource("8_r41n4")]
+position = Vector2(-48, 87)
+
+[node name="Block2" parent="World/Room-4_-2" instance=ExtResource("8_r41n4")]
+position = Vector2(204, 87)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-4_-2"]
+position = Vector2(-164, -17)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-2/Floor4"]
+shape = SubResource("RectangleShape2D_34npq")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-2/Floor4"]
+texture = SubResource("CompressedTexture2D_dqvtl")
+region_enabled = true
+region_rect = Rect2(0, 0, 120, 16)
+
+[node name="Bridge" parent="World/Room-4_-2" instance=ExtResource("9_o2gkb")]
+position = Vector2(-127, -26)
+
+[node name="Room-3_-2" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1440, -540)
+metadata/_edit_lock_ = true
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(72, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling3" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(-216, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Ceiling3"]
+shape = SubResource("RectangleShape2D_k0xml")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Ceiling3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_n31ty")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(39, 28)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Wall2"]
+shape = SubResource("RectangleShape2D_7fe7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_qyj4x")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 16)
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(91, 74)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Floor4"]
+shape = SubResource("RectangleShape2D_34npq")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Floor4"]
+texture = SubResource("CompressedTexture2D_dqvtl")
+region_enabled = true
+region_rect = Rect2(0, 0, 120, 16)
+
+[node name="Floor5" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(164, 20)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Floor5"]
+shape = SubResource("RectangleShape2D_34npq")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Floor5"]
+texture = SubResource("CompressedTexture2D_dqvtl")
+region_enabled = true
+region_rect = Rect2(0, 0, 120, 16)
+
+[node name="Floor6" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(67, -28)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Floor6"]
+shape = SubResource("RectangleShape2D_icc15")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Floor6"]
+texture = SubResource("CompressedTexture2D_x1s2w")
+region_enabled = true
+region_rect = Rect2(72, 0, 72, 16)
+
+[node name="Floor7" type="StaticBody2D" parent="World/Room-3_-2"]
+position = Vector2(164, -78)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-2/Floor7"]
+shape = SubResource("RectangleShape2D_34npq")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-2/Floor7"]
+texture = SubResource("CompressedTexture2D_dqvtl")
+region_enabled = true
+region_rect = Rect2(120, 0, 120, 16)
+
+[node name="Room-4_-3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, -810)
+metadata/_edit_lock_ = true
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(24, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Floor2"]
+shape = SubResource("RectangleShape2D_l0t3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Floor2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_86pd0")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(-196, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Floor3"]
+shape = SubResource("RectangleShape2D_lp740")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Floor3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Floor8" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(212, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Floor8"]
+shape = SubResource("RectangleShape2D_lp740")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Floor8"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(-145, 70)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Floor4"]
+shape = SubResource("RectangleShape2D_lp740")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Floor4"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Floor5" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(-195, 10)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Floor5"]
+shape = SubResource("RectangleShape2D_lp740")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Floor5"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Floor6" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(-138, -53)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Floor6"]
+shape = SubResource("RectangleShape2D_lp740")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Floor6"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Floor7" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(-2, -71)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Floor7"]
+shape = SubResource("RectangleShape2D_fi2p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Floor7"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-4_-3"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-3/Wall"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-3/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Room-3_-3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1440, -810)
+metadata/_edit_lock_ = true
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-3_-3"]
+position = Vector2(72, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-3/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-3/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-3_-3"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-3/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-3/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-3_-3"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-3/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-3/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-3_-3"]
+position = Vector2(172, 48)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-3/Floor4"]
+shape = SubResource("RectangleShape2D_kmvxp")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-3/Floor4"]
+texture = SubResource("CompressedTexture2D_dqvtl")
+region_enabled = true
+region_rect = Rect2(104, 0, 104, 16)
+
+[node name="Floor5" type="StaticBody2D" parent="World/Room-3_-3"]
+position = Vector2(61, -21)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-3/Floor5"]
+shape = SubResource("RectangleShape2D_34npq")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-3/Floor5"]
+texture = SubResource("CompressedTexture2D_dqvtl")
+region_enabled = true
+region_rect = Rect2(104, 0, 104, 16)
+
+[node name="Floor6" type="StaticBody2D" parent="World/Room-3_-3"]
+position = Vector2(-216, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_-3/Floor6"]
+shape = SubResource("RectangleShape2D_qyj4x")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_-3/Floor6"]
+texture = SubResource("CompressedTexture2D_k0xml")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 16)
+
+[node name="Bridge" parent="World/Room-3_-3" instance=ExtResource("9_o2gkb")]
+position = Vector2(20, 117)
+
+[node name="Bridge2" parent="World/Room-3_-3" instance=ExtResource("9_o2gkb")]
+position = Vector2(59, -32)
+
+[node name="Room-4_-4" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, -1080)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Wall2"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="HideAndSeek" parent="World/Room-4_-4" instance=ExtResource("10_6hwn3")]
+
+[node name="Floor7" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(-170, 54)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Floor7"]
+shape = SubResource("RectangleShape2D_fi2p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Floor7"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Floor8" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(-120, -24)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Floor8"]
+shape = SubResource("RectangleShape2D_fi2p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Floor8"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Floor9" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(170, 54)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Floor9"]
+shape = SubResource("RectangleShape2D_fi2p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Floor9"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Floor10" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(120, -24)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Floor10"]
+shape = SubResource("RectangleShape2D_fi2p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Floor10"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Bridge" parent="World/Room-4_-4" instance=ExtResource("9_o2gkb")]
+position = Vector2(131, -96)
+
+[node name="Pillar" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(-104, 119)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Pillar"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_w4xnb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Room-4_-4/Pillar"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_i3qeq")
+
+[node name="Pillar2" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(-149, -32)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Pillar2"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_w4xnb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Room-4_-4/Pillar2"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_i3qeq")
+frame = 1
+
+[node name="Pillar3" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(160, 46)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Pillar3"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_i3qeq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Room-4_-4/Pillar3"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_umda6")
+frame = 2
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(-80, -71)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Floor3"]
+shape = SubResource("RectangleShape2D_lp740")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Floor3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-4_-4"]
+position = Vector2(80, -72)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-4/Floor4"]
+shape = SubResource("RectangleShape2D_lp740")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-4/Floor4"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_l0t3v")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 16)
+
+[node name="Room-4_-5" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, -1350)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-4_-5"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-5/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-5/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-4_-5"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-5/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-5/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-4_-5"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-5/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-5/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-4_-5"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-5/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-5/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-4_-5"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_-5/Wall2"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_-5/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="DewDropHolder" parent="World/Room-4_-5" instance=ExtResource("12_wr0d1")]
+position = Vector2(-136, 119)
+
+[node name="Room-5_-1" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-2400, -270)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-5_-1"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_-1/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_-1/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-5_-1"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_-1/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_-1/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-5_-1"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_-1/Wall"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_-1/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-5_-1"]
+position = Vector2(232, -35)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_-1/Wall2"]
+shape = SubResource("RectangleShape2D_m7clp")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_-1/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_34npq")
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 16)
+
+[node name="Block" parent="World/Room-5_-1" instance=ExtResource("8_r41n4")]
+position = Vector2(-192, 88)
+
+[node name="Room-3_0" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1440, 0)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-3_0"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_0/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_0/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-3_0"]
+position = Vector2(0, 46)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_0/Floor3"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_0/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-3_0"]
+position = Vector2(72, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_0/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_0/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-3_0"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_0/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_0/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-3_0"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_0/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_0/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-3_0"]
+position = Vector2(-96, 84)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_0/Wall2"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_0/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall3" type="StaticBody2D" parent="World/Room-3_0"]
+position = Vector2(96, 84)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_0/Wall3"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_0/Wall3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Block" parent="World/Room-3_0" instance=ExtResource("8_r41n4")]
+position = Vector2(0, 6)
+
+[node name="Room-4_0" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, 0)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-4_0"]
+position = Vector2(-72, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_0/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_0/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-4_0"]
+position = Vector2(0, -61)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_0/Floor3"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_0/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-4_0"]
+position = Vector2(-145, 7)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_0/Floor4"]
+shape = SubResource("RectangleShape2D_umda6")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_0/Floor4"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 158, 16)
+
+[node name="Floor5" type="StaticBody2D" parent="World/Room-4_0"]
+position = Vector2(-120, 62)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_0/Floor5"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_0/Floor5"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-4_0"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_0/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_0/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-4_0"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_0/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_0/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-4_0"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_0/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_0/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-4_0"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_0/Wall"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_0/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Bridge" parent="World/Room-4_0" instance=ExtResource("9_o2gkb")]
+position = Vector2(-128, 118)
+
+[node name="Room-3_1" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1440, 270)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(70, -74)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Floor3"]
+shape = SubResource("RectangleShape2D_rjiqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 308, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(-70, 1)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Floor4"]
+shape = SubResource("RectangleShape2D_rjiqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Floor4"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 308, 16)
+
+[node name="Floor5" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(70, 62)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Floor5"]
+shape = SubResource("RectangleShape2D_rjiqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Floor5"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 308, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Ceiling"]
+shape = SubResource("RectangleShape2D_jgabe")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(72, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Ceiling2"]
+shape = SubResource("RectangleShape2D_153bv")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-3_1"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_1/Wall2"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_1/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Block" parent="World/Room-3_1" instance=ExtResource("8_r41n4")]
+position = Vector2(-192, -39)
+
+[node name="Block2" parent="World/Room-3_1" instance=ExtResource("8_r41n4")]
+position = Vector2(192, 22)
+
+[node name="Block3" parent="World/Room-3_1" instance=ExtResource("8_r41n4")]
+position = Vector2(-192, 87)
+
+[node name="Room-3_2" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1440, 540)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-3_2"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_2/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-3_2"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_2/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-3_2"]
+position = Vector2(72, -1)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_2/Floor3"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-3_2"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_2/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-3_2"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_2/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-3_2"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_2/Wall"]
+shape = SubResource("RectangleShape2D_6s345")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 238, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-3_2"]
+position = Vector2(-40, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_2/Wall2"]
+shape = SubResource("RectangleShape2D_6s345")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 238, 16)
+
+[node name="Block" parent="World/Room-3_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-1, -41)
+
+[node name="Block3" parent="World/Room-3_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-92, 87)
+
+[node name="Block4" parent="World/Room-3_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-181, 87)
+
+[node name="Block5" parent="World/Room-3_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-92, 24)
+
+[node name="Block6" parent="World/Room-3_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-181, 24)
+
+[node name="Block7" parent="World/Room-3_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-92, -40)
+
+[node name="Block8" parent="World/Room-3_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-181, -40)
+
+[node name="Block2" parent="World/Room-3_2" instance=ExtResource("8_r41n4")]
+position = Vector2(240, 88)
+
+[node name="Room-2_2" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-960, 540)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-2_2"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_2/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_2/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-2_2"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_2/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_2/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Block" parent="World/Room-2_2" instance=ExtResource("8_r41n4")]
+position = Vector2(240, 87)
+
+[node name="PawSmack" parent="World/Room-2_2" instance=ExtResource("13_m7clp")]
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-2_2"]
+position = Vector2(0, 46)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_2/Floor3"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_2/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-2_2"]
+position = Vector2(-96, 84)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_2/Wall2"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_2/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall3" type="StaticBody2D" parent="World/Room-2_2"]
+position = Vector2(96, 84)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_2/Wall3"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_2/Wall3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Block2" parent="World/Room-2_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-56, 6)
+
+[node name="Block3" parent="World/Room-2_2" instance=ExtResource("8_r41n4")]
+position = Vector2(57, 6)
+
+[node name="Room-1_2" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-480, 540)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-1_2"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_2/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_2/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-1_2"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_2/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_2/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-1_2"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_2/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_2/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-1_2"]
+position = Vector2(-6, -35)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_2/Floor3"]
+shape = SubResource("RectangleShape2D_068ko")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_2/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-1_2"]
+position = Vector2(-15, 46)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_2/Floor4"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_2/Floor4"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-1_2"]
+position = Vector2(-73, 3)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_2/Wall2"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_2/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall3" type="StaticBody2D" parent="World/Room-1_2"]
+position = Vector2(-111, 84)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_2/Wall3"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_2/Wall3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Block" parent="World/Room-1_2" instance=ExtResource("8_r41n4")]
+position = Vector2(37, 6)
+
+[node name="Block2" parent="World/Room-1_2" instance=ExtResource("8_r41n4")]
+position = Vector2(189, 87)
+
+[node name="Block3" parent="World/Room-1_2" instance=ExtResource("8_r41n4")]
+position = Vector2(-30, 6)
+
+[node name="MilkDistraction" parent="World/Room-1_2" instance=ExtResource("14_34npq")]
+
+[node name="Room-3_3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1440, 810)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling3" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(0, 1)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Ceiling3"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling3"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling4" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(-124, 51)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Ceiling4"]
+shape = SubResource("RectangleShape2D_lsbf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling4"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 16)
+
+[node name="Ceiling5" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(116, 51)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Ceiling5"]
+shape = SubResource("RectangleShape2D_lsbf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling5"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Block" parent="World/Room-3_3" instance=ExtResource("8_r41n4")]
+position = Vector2(-3, -39)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(-232, -33)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Wall2"]
+shape = SubResource("RectangleShape2D_fhhk1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 172, 16)
+
+[node name="Wall5" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(232, -69)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Wall5"]
+shape = SubResource("RectangleShape2D_pyro2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Wall5"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 102, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(232, -10)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Floor2"]
+shape = SubResource("RectangleShape2D_l0t3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Floor2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_86pd0")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-3_3"]
+position = Vector2(232, 68)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-3_3/Floor3"]
+shape = SubResource("RectangleShape2D_l0t3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Floor3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_86pd0")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Room-2_3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-960, 810)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling3" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(-136, 68)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Ceiling3"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling3"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling6" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(136, 68)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Ceiling6"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling6"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling4" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(-136, -10)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Ceiling4"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling4"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling5" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(136, -20)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Ceiling5"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling5"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall4" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(-40, 25)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Wall4"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Wall4"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall6" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(232, 17)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Wall6"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Wall6"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall7" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(232, 86)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Wall7"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Wall7"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall5" type="StaticBody2D" parent="World/Room-2_3"]
+position = Vector2(-232, -69)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-2_3/Wall5"]
+shape = SubResource("RectangleShape2D_pyro2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Wall5"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 102, 16)
+
+[node name="JumpScare" parent="World/Room-2_3" instance=ExtResource("16_4yll1")]
+
+[node name="Room-1_3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-480, 810)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling5" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(-136, -20)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Ceiling5"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling5"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling7" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(-56, 38)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Ceiling7"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling7"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling8" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(186, 46)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Ceiling8"]
+shape = SubResource("RectangleShape2D_ty4qt")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling8"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Ceiling6" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(136, -48)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Ceiling6"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling6"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall6" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(-232, 17)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Wall6"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Wall6"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall8" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(40, -5)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Wall8"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Wall8"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall7" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(-232, 85)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Wall7"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Wall7"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Floor6" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(-188, 92)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Floor6"]
+shape = SubResource("RectangleShape2D_icc15")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Floor6"]
+texture = SubResource("CompressedTexture2D_x1s2w")
+region_enabled = true
+region_rect = Rect2(72, 0, 72, 16)
+
+[node name="Floor7" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(92, 111)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Floor7"]
+shape = SubResource("RectangleShape2D_icc15")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Floor7"]
+texture = SubResource("CompressedTexture2D_x1s2w")
+region_enabled = true
+region_rect = Rect2(72, 0, 72, 16)
+
+[node name="Floor8" type="StaticBody2D" parent="World/Room-1_3"]
+position = Vector2(92, 95)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-1_3/Floor8"]
+shape = SubResource("RectangleShape2D_icc15")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Floor8"]
+texture = SubResource("CompressedTexture2D_x1s2w")
+region_enabled = true
+region_rect = Rect2(72, 0, 72, 16)
+
+[node name="JumpScare" parent="World/Room-1_3" instance=ExtResource("16_4yll1")]
+
+[node name="Room0_3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(0, 810)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room0_3"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room0_3/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room0_3"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room0_3/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling6" type="StaticBody2D" parent="World/Room0_3"]
+position = Vector2(0, -48)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room0_3/Ceiling6"]
+shape = SubResource("RectangleShape2D_a0gwo")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Ceiling6"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="JumpScare" parent="World/Room0_3" instance=ExtResource("16_4yll1")]
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room0_3"]
+position = Vector2(0, 46)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room0_3/Floor3"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room0_3"]
+position = Vector2(-96, 84)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room0_3/Wall2"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall3" type="StaticBody2D" parent="World/Room0_3"]
+position = Vector2(96, 84)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room0_3/Wall3"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Wall3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Ceiling8" type="StaticBody2D" parent="World/Room0_3"]
+position = Vector2(-172, 46)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room0_3/Ceiling8"]
+shape = SubResource("RectangleShape2D_q02nm")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Ceiling8"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 136, 16)
+
+[node name="Floor8" type="StaticBody2D" parent="World/Room0_3"]
+position = Vector2(204, 34)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room0_3/Floor8"]
+shape = SubResource("RectangleShape2D_icc15")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Floor8"]
+texture = SubResource("CompressedTexture2D_x1s2w")
+region_enabled = true
+region_rect = Rect2(72, 0, 72, 16)
+
+[node name="Room1_3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(480, 810)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling8" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(-186, -48)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Ceiling8"]
+shape = SubResource("RectangleShape2D_ty4qt")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling8"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 108, 16)
+
+[node name="Wall8" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(-140, -91)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Wall8"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Wall8"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Ceiling7" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(-136, 34)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Ceiling7"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling7"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling10" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(136, 56)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Ceiling10"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling10"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling9" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(104, -36)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Ceiling9"]
+shape = SubResource("RectangleShape2D_pnyta")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling9"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 272, 16)
+
+[node name="Wall9" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(-40, -9)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Wall9"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Wall9"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Wall10" type="StaticBody2D" parent="World/Room1_3"]
+position = Vector2(232, 46)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room1_3/Wall10"]
+shape = SubResource("RectangleShape2D_xm45j")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Wall10"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 148, 16)
+
+[node name="JumpScare" parent="World/Room1_3" instance=ExtResource("16_4yll1")]
+
+[node name="Room2_3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(960, 810)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room2_3"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room2_3/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room2_3/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room2_3"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room2_3/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room2_3/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room2_3"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room2_3/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room2_3/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Block" parent="World/Room2_3" instance=ExtResource("8_r41n4")]
+position = Vector2(-192, 23)
+
+[node name="Block3" parent="World/Room2_3" instance=ExtResource("8_r41n4")]
+position = Vector2(-128, 87)
+
+[node name="Block2" parent="World/Room2_3" instance=ExtResource("8_r41n4")]
+position = Vector2(-192, 87)
+
+[node name="Wall10" type="StaticBody2D" parent="World/Room2_3"]
+position = Vector2(-232, 38)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room2_3/Wall10"]
+shape = SubResource("RectangleShape2D_s4o1x")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room2_3/Wall10"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 164, 16)
+
+[node name="Toadstool" parent="World/Room2_3" instance=ExtResource("16_avcdf")]
+position = Vector2(159, 119)
+
+[node name="Room-4_3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, 810)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(232, -33)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Wall"]
+shape = SubResource("RectangleShape2D_pojkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 172, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(-232, -33)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Wall2"]
+shape = SubResource("RectangleShape2D_pojkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 172, 16)
+
+[node name="Wall3" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(-132, -41)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Wall3"]
+shape = SubResource("RectangleShape2D_g6n2g")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Wall3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 172, 200)
+
+[node name="Wall4" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(132, -39)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Wall4"]
+shape = SubResource("RectangleShape2D_g6n2g")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Wall4"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 172, 200)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling3" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(-136, 45)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Ceiling3"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Ceiling3"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling4" type="StaticBody2D" parent="World/Room-4_3"]
+position = Vector2(136, 45)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_3/Ceiling4"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Ceiling4"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Mouse" parent="World/Room-4_3" instance=ExtResource("15_dqvtl")]
+position = Vector2(236, 119)
+
+[node name="Room-4_2" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, 540)
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-4_2"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_2/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_2/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-4_2"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_2/Wall2"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_2/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-4_2"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_2/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_2/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-4_2"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_2/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_2/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Room-4_1" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-1920, 270)
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-4_1"]
+position = Vector2(232, 7)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_1/Wall"]
+shape = SubResource("RectangleShape2D_43f3o")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_1/Wall"]
+texture_repeat = 2
+position = Vector2(1, -3.61999e-06)
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 254, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-4_1"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_1/Wall2"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_1/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-4_1"]
+position = Vector2(-72, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_1/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_1/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-4_1"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_1/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-4_1/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Room-5_3" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-2400, 810)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-5_3"]
+position = Vector2(0, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_3/Floor"]
+shape = SubResource("RectangleShape2D_r41n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Floor"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-5_3"]
+position = Vector2(84, -61)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_3/Floor2"]
+shape = SubResource("RectangleShape2D_hc5x7")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Floor2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 280, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-5_3"]
+position = Vector2(-136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_3/Ceiling"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Ceiling"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Ceiling3" type="StaticBody2D" parent="World/Room-5_3"]
+position = Vector2(-154, 47)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_3/Ceiling3"]
+shape = SubResource("RectangleShape2D_v5pto")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Ceiling3"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 172, 16)
+
+[node name="Ceiling2" type="StaticBody2D" parent="World/Room-5_3"]
+position = Vector2(136, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_3/Ceiling2"]
+shape = SubResource("RectangleShape2D_fsvxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Ceiling2"]
+texture_repeat = 2
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-5_3"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_3/Wall"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall3" type="StaticBody2D" parent="World/Room-5_3"]
+position = Vector2(232, -33)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_3/Wall3"]
+shape = SubResource("RectangleShape2D_pojkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Wall3"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 172, 16)
+
+[node name="Block4" parent="World/Room-5_3" instance=ExtResource("8_r41n4")]
+position = Vector2(124, 89)
+
+[node name="Block5" parent="World/Room-5_3" instance=ExtResource("8_r41n4")]
+position = Vector2(-100, 87)
+
+[node name="Block6" parent="World/Room-5_3" instance=ExtResource("8_r41n4")]
+position = Vector2(-155, 6)
+
+[node name="JumpScare" parent="World/Room-5_3" instance=ExtResource("16_4yll1")]
+
+[node name="Room-5_2" parent="World" instance=ExtResource("6_6hwn3")]
+position = Vector2(-2400, 540)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(-136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Floor"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Floor"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Floor2" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(136, 127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Floor2"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Floor2"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(208, 0, 208, 16)
+
+[node name="Ceiling" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(0, -127)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Ceiling"]
+shape = SubResource("RectangleShape2D_o2gkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Ceiling"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_6hwn3")
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 16)
+
+[node name="Wall" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(232, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Wall"]
+shape = SubResource("RectangleShape2D_6hwn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Wall"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Wall2" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(-232, 1)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Wall2"]
+shape = SubResource("RectangleShape2D_70yr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Wall2"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_wr0d1")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 16)
+
+[node name="Floor3" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(0, 46)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Floor3"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Floor3"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall4" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(96, 84)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Wall4"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Wall4"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="Floor4" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(120, -32)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Floor4"]
+shape = SubResource("RectangleShape2D_2ov4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Floor4"]
+texture = ExtResource("7_2ov4n")
+region_enabled = true
+region_rect = Rect2(0, 0, 208, 16)
+
+[node name="Wall5" type="StaticBody2D" parent="World/Room-5_2"]
+position = Vector2(24, 3)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Wall5"]
+shape = SubResource("RectangleShape2D_01se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Wall5"]
+texture_repeat = 2
+texture = SubResource("CompressedTexture2D_70yr0")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 16)
+
+[node name="EyeOfNewt" parent="World/Room-5_2" instance=ExtResource("17_13ovd")]
+position = Vector2(196, -48)
+
+[node name="Debug" type="CanvasLayer" parent="."]
+script = ExtResource("7_70yr0")
+
+[node name="CatState" type="Label" parent="Debug"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("8_wr0d1")
+text = "Cat is WANDERING"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("9_m7clp")
+
+[node name="MessageText" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -26.0
+offset_right = 57.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_34npq")
+text = "Message goes here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionText" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = 2.0
+offset_right = 40.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_34npq")
+text = "Press E to Do"
+vertical_alignment = 1
+
+[node name="CatText" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_right = 40.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("10_34npq")
+text = "Cat Go Meow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DewDropSpawner" parent="." instance=ExtResource("13_fsvxl")]
+position = Vector2(-2593, -314)
