@@ -14,7 +14,7 @@ var move_drag := 0.0
 func _ready() -> void:
 	move_drag = move_accel / max_speed
 	if flipped:
-		butt.position.x *= -1
+		scale.x *= -1
 
 func _physics_process(_delta: float) -> void:
 	# Calculate Drag
