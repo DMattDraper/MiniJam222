@@ -68,6 +68,9 @@ func _ready() -> void:
 	eye.position = Vector2.ZERO
 
 func _physics_process(_delta) -> void:
+	if !active:
+		return
+	
 	if state == STATES.PEEKING:
 		peek()
 	arm_holder.scale.y = abs(paw.global_position.x - origin_point.global_position.x)

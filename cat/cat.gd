@@ -12,8 +12,8 @@ var state : STATES = STATES.WANDERING
 
 @onready var current_room : Room
 
-@export var wander_time := 10.0
-@export var search_time := 5.0
+@export var wander_time := 5.0
+@export var search_time := 2.5
 @export var hunt_time := 2.5
 @export var distract_time := 30.0
 
@@ -97,17 +97,29 @@ func change_room() -> void:
 					change_state(STATES.SEARCHING)
 	
 	while(next_room == null):
-		var x := randi_range(-1, 1)
-		var y := randi_range(-1, 1)
+		var rand_x := randi_range(-1, 1)
+		var rand_y := randi_range(-1, 1)
 		
-		if state == STATES.WANDERING or state == STATES.SEARCHING:
-			next_room = Statics.world.get_room_by_index(current_room.index_x + x, current_room.index_y + y)
-		if state == STATES.HUNTING:
+		if state == STATES.WANDERING or state == STATES.SEARCHING or state == STATES.HUNTING:
 			var x_offset =  clamp(Statics.world.current_room.index_x - current_room.index_x, -1, 1)
 			var y_offset =  clamp(Statics.world.current_room.index_y - current_room.index_y, -1, 1)
+			# Move towards Player
 			next_room = Statics.world.get_room_by_index(current_room.index_x + x_offset, current_room.index_y + y_offset)
+			# If move not valid, try to move towards Player on X axis
 			if next_room == null:
-				next_room = Statics.world.get_room_by_index(current_room.index_x + x, current_room.index_y + y)
+				next_room = Statics.world.get_room_by_index(current_room.index_x + x_offset, current_room.index_y)
+				if next_room == current_room:
+					next_room = null
+				# If move not valid, try to move towards Player on Y axis
+			if next_room == null:
+				next_room = Statics.world.get_room_by_index(current_room.index_x, current_room.index_y + y_offset)
+				if next_room == current_room:
+					next_room = null
+			# If move not valid, try to move randomly
+			if next_room == null:
+				next_room = Statics.world.get_room_by_index(current_room.index_x + rand_x, current_room.index_y + rand_y)
+				if next_room == current_room:
+					next_room = null
 	
 	current_room.is_cat_present = false
 	
