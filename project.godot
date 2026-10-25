@@ -29,6 +29,10 @@ window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
 
+[global_group]
+
+items=""
+
 [input]
 
 move_left={

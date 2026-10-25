@@ -7,8 +7,11 @@ class_name Player extends CharacterBody2D
 var direction := 0.0
 var facing := 1.0
 
+var starting_position : Vector2
+
 func _ready() -> void:
 	Statics.player = self
+	starting_position = position
 
 func _process(_delta: float) -> void:
 	direction = Input.get_axis("move_left", "move_right")
@@ -47,3 +50,6 @@ func _process(_delta: float) -> void:
 			sprite.play("idle_hold") 
 		else:
 			sprite.play("idle")
+
+func kill():
+	GameManager.call_deferred("die")

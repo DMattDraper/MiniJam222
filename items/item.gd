@@ -6,12 +6,15 @@ var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var interaction_message := "Press E to Pickup"
 @export var item_name := "Item"
+@export var reset_on_death := false
 var held := false
 
 var move_drag := 0.0
 
+var starting_position : Vector2
+
 func _ready() -> void:
-	add_to_group("items")
+	starting_position = position
 
 func _physics_process(delta: float) -> void:
 	# Apply Gravity
@@ -36,3 +39,6 @@ func grab() -> void:
 
 func drop() -> void:
 	pass
+
+func reset() -> void:
+	position = starting_position
