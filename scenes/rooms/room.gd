@@ -3,8 +3,6 @@ class_name Room extends Node2D
 # TODO: Remove, temporary
 @onready var meow: AudioStreamPlayer2D = $Meow
 
-@onready var background: Sprite2D = $Background
-
 @onready var camera_anchor: Marker2D = $CameraAnchor
 @onready var bounding_box: Area2D = $BoundingBox
 

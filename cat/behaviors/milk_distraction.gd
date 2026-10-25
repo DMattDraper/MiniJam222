@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func activate() -> void:
 	super()
+	graphics.play("appear")
 	if filled:
 		Statics.cat.change_state(Cat.STATES.DISTRACTED)
 		Statics.hud.update_message_text("The cat is drinking the milk!")
@@ -23,6 +24,10 @@ func activate() -> void:
 		Statics.hud.update_message_text("The cat finished the milk!")
 	else:
 		pass
+
+func deactivate() -> void:
+	super()
+	graphics.play("disappear")
 
 func fill_saucer():
 	filled = true

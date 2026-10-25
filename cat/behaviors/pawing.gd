@@ -19,6 +19,7 @@ var player_last_position : Vector2
 
 @onready var arm_holder : Node2D = $Paw_Holder/Arm_Holder
 
+@onready var eye: AnimatedSprite2D = $Eye
 
 var origin_point : Node2D
 
@@ -61,6 +62,10 @@ func _ready() -> void:
 	need_to_peek = true
 	peeking = false
 	ray_cast.enabled = false
+	
+	remove_child(eye)
+	room.add_child.call_deferred(eye)
+	eye.position = Vector2.ZERO
 
 func _physics_process(_delta) -> void:
 	if state == STATES.PEEKING:
@@ -73,6 +78,8 @@ func handle_behavior(_delta: float) -> void:
 		ray_cast.enabled = true
 
 func peek() -> void:
+	eye.show()
+	
 	Statics.hud.update_cat_text("Peeking...")
 	ray_cast.target_position = Vector2(cos(Time.get_unix_time_from_system())*(540.0/2.0), sin(Time.get_unix_time_from_system())*(248.0/2.0))
 	if ray_cast.is_colliding():
@@ -94,6 +101,8 @@ func peek_again() -> void:
 	need_to_peek = true
 
 func paw_at() -> void:
+	eye.hide()
+	
 	Statics.hud.update_cat_text("GET BACK!")
 	if direction_of_player == DIRECTIONS.LEFT:
 		anim_player.play("Attack_Left")
@@ -110,3 +119,6 @@ func find_origin_point() -> bool:
 func _on_hurtbox_body_entered(body):
 	if body is Player:
 		body.kill()
+
+func deactivate() -> void:
+	eye.hide()
