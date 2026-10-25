@@ -156,15 +156,15 @@ load_path = "res://.godot/imported/wood_tile.png-033fc100a558940031dcdd89ff82396
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4xnb"]
 size = Vector2(32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wq42y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p8eo"]
 atlas = ExtResource("11_70yr0")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mt8ka"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gny1c"]
 atlas = ExtResource("11_70yr0")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eaojj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_frq1x"]
 atlas = ExtResource("11_70yr0")
 region = Rect2(128, 0, 64, 64)
 
@@ -172,13 +172,13 @@ region = Rect2(128, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wq42y")
+"texture": SubResource("AtlasTexture_5p8eo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mt8ka")
+"texture": SubResource("AtlasTexture_gny1c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eaojj")
+"texture": SubResource("AtlasTexture_frq1x")
 }],
 "loop": true,
 "name": &"default",
@@ -192,13 +192,13 @@ size = Vector2(32, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wq42y")
+"texture": SubResource("AtlasTexture_5p8eo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mt8ka")
+"texture": SubResource("AtlasTexture_gny1c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eaojj")
+"texture": SubResource("AtlasTexture_frq1x")
 }],
 "loop": true,
 "name": &"default",
