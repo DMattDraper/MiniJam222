@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cse134lpu8hw3" path="res://scenes/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://btwnf86sbaqj2" path="res://scenes/main_menu.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://2ik8se7bqd1f" path="res://scenes/dave_world.tscn" id="3_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://b4bjhqy23edop" path="res://music/hot_purrsuit.ogg" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b6oemqo42lpgm" path="res://scenes/world.tscn" id="4_tbgi4"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_o5qli")
@@ -12,8 +12,7 @@ script = ExtResource("1_o5qli")
 stream = ExtResource("4_jyhfs")
 volume_db = -6.0
 autoplay = true
-bus = &"Music"
 
 [node name="MainMenu" parent="." instance=ExtResource("2_sugp2")]
 
-[node name="World" parent="." instance=ExtResource("3_jyhfs")]
+[node name="World" parent="." instance=ExtResource("4_tbgi4")]
