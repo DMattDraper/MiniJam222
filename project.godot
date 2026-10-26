@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="MiniJam222"
+config/name="Gnome Alone"
 run/main_scene="uid://bud3qcgke6chn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
