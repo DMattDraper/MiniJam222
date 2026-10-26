@@ -96,9 +96,10 @@ func change_room() -> void:
 				STATES.HUNTING:
 					change_state(STATES.SEARCHING)
 	
+	var move_range = 1
 	while(next_room == null):
-		var rand_x := randi_range(-1, 1)
-		var rand_y := randi_range(-1, 1)
+		var rand_x := randi_range(-1 * move_range, move_range)
+		var rand_y := randi_range(-1 * move_range, move_range)
 		
 		if state == STATES.WANDERING or state == STATES.SEARCHING or state == STATES.HUNTING:
 			var x_offset =  clamp(Statics.world.current_room.index_x - current_room.index_x, -1, 1)
@@ -120,6 +121,8 @@ func change_room() -> void:
 				next_room = Statics.world.get_room_by_index(current_room.index_x + rand_x, current_room.index_y + rand_y)
 				if next_room == current_room:
 					next_room = null
+		
+		move_range += 1
 	
 	current_room.is_cat_present = false
 	
