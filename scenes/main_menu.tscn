@@ -65,6 +65,7 @@ offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_l6cm7")
+metadata/_edit_use_anchors_ = true
 
 [node name="Filter" type="TextureRect" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.568627)
@@ -81,6 +82,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ekxnf")
+metadata/_edit_use_anchors_ = true
 
 [node name="Parallax2D" type="Parallax2D" parent="CanvasLayer"]
 repeat_size = Vector2(480, 0)

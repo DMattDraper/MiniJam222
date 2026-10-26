@@ -3,6 +3,7 @@ extends Node
 @onready var main : Main
 
 @onready var main_menu : MainMenu
+@onready var intro_cutscene : Node
 @onready var world : Node
 @onready var victory_screen : Node
 
@@ -32,8 +33,11 @@ func reset() -> void:
 	get_tree().reload_current_scene()
 
 func start_game() -> void:
-	
 	main.remove_child(main_menu)
+	main.add_child(intro_cutscene)
+
+func skip_cutscene() -> void:
+	main.remove_child(intro_cutscene)
 	main.add_child(world)
 
 func win_game() -> void:

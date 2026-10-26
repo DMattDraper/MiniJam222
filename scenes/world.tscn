@@ -5778,6 +5778,7 @@ mesh = SubResource("QuadMesh_6oujy")
 position = Vector2(-192, 87)
 
 [node name="Debug" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("6_o8fc1")
 
 [node name="CatState" type="Label" parent="Debug"]
