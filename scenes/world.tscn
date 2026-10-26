@@ -5755,6 +5755,7 @@ z_as_relative = false
 mesh = SubResource("QuadMesh_6oujy")
 
 [node name="Debug" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("6_o8fc1")
 
 [node name="CatState" type="Label" parent="Debug"]
