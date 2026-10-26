@@ -7,6 +7,9 @@ extends Node
 @onready var world : Node
 @onready var victory_screen : Node
 
+var tracking := false
+var time := 0.0
+
 func die() -> void:
 	var behavior := Statics.world.current_room.cat_behavior
 	if behavior:
@@ -24,6 +27,10 @@ func die() -> void:
 	
 	Statics.hud.update_message_text("You were caught by the Cat! Don't give up!")
 
+func _process(delta: float) -> void:
+	if tracking:
+		time += delta
+
 func reset() -> void:
 	DewDropHolder.added_to_cauldron = false
 	EyeOfNewt.added_to_cauldron = false
@@ -37,12 +44,15 @@ func start_game() -> void:
 	main.add_child(intro_cutscene)
 
 func skip_cutscene() -> void:
+	tracking = true
 	main.remove_child(intro_cutscene)
 	main.add_child(world)
 
 func win_game() -> void:
+	tracking = false
 	main.remove_child(world)
 	main.add_child(victory_screen)
+	victory_screen.update_text()
 
 func quit() -> void:
 	get_tree().quit()

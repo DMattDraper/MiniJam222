@@ -3019,7 +3019,7 @@ region_rect = Rect2(0, 0, 184, 16)
 position = Vector2(64, 86)
 
 [node name="Block3" parent="World/Room-4_-1" instance=ExtResource("18_ts3gi")]
-position = Vector2(64, 86)
+position = Vector2(64, 87)
 
 [node name="Room-4_-2" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-1920, -540)
