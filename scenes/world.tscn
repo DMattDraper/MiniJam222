@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://b6oemqo42lpgm"]
+[gd_scene load_steps=127 format=3 uid="uid://b6oemqo42lpgm"]
 
 [ext_resource type="Texture2D" uid="uid://baobjad3dja5w" path="res://environment/background_base.png" id="1_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://d1t06fd85l2os" path="res://environment/background_filter.png" id="2_w7kh3"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cxslalxvm1cgo" path="res://items/dew_drop_spawner.tscn" id="21_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://bmofsuglnmjre" path="res://cat/behaviors/milk_distraction.tscn" id="21_navra"]
 [ext_resource type="PackedScene" uid="uid://qnclqcxq4uub" path="res://cat/behaviors/jump_scare.tscn" id="22_luhhm"]
+[ext_resource type="Texture2D" uid="uid://dvwjsjituscb3" path="res://environment/stone_tile.png" id="23_37qwj"]
 [ext_resource type="PackedScene" uid="uid://byhnqxqrd8jd4" path="res://items/toadstool.tscn" id="23_fh13f"]
 [ext_resource type="PackedScene" uid="uid://cxvch7jovw5y8" path="res://items/eye_of_newt.tscn" id="24_rup4s"]
 
@@ -351,14 +352,23 @@ size = Vector2(172, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmmry"]
 size = Vector2(172, 200)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_26qbd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rup4s"]
 size = Vector2(254, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wdv8"]
+size = Vector2(290, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_optxr"]
 size = Vector2(280, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbuqd"]
 size = Vector2(172, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_navra"]
+size = Vector2(238, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37qwj"]
+size = Vector2(238, 16)
 
 [node name="World" type="Node"]
 
@@ -3946,6 +3956,7 @@ modulate = Color(0.343736, 0.184889, 0.139532, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_6oujy")
+metadata/_edit_lock_ = true
 
 [node name="Room-4_0" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-1920, 0)
@@ -4058,6 +4069,7 @@ modulate = Color(0.343736, 0.184889, 0.139532, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_6oujy")
+metadata/_edit_lock_ = true
 
 [node name="Room-3_1" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-1440, 270)
@@ -4190,6 +4202,7 @@ modulate = Color(0.343736, 0.184889, 0.139532, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_6oujy")
+metadata/_edit_lock_ = true
 
 [node name="Room-3_2" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-1440, 540)
@@ -4202,9 +4215,10 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_1jxku")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Floor"]
-texture = ExtResource("7_2lf6f")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
-region_rect = Rect2(208, 0, 208, 16)
+region_rect = Rect2(0, 0, 208, 16)
 
 [node name="Floor2" type="StaticBody2D" parent="World/Room-3_2"]
 position = Vector2(136, 127)
@@ -4214,9 +4228,10 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_1jxku")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_2/Floor2"]
-texture = ExtResource("7_2lf6f")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
-region_rect = Rect2(208, 0, 208, 16)
+region_rect = Rect2(0, 0, 208, 16)
 
 [node name="Floor3" type="StaticBody2D" parent="World/Room-3_2"]
 position = Vector2(72, -1)
@@ -4257,7 +4272,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
 [node name="Wall" type="StaticBody2D" parent="World/Room-3_2"]
-position = Vector2(-232, 1)
+position = Vector2(-232, 0)
 rotation = 1.5708
 collision_mask = 0
 
@@ -4313,6 +4328,7 @@ modulate = Color(0.343736, 0.184889, 0.139532, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_6oujy")
+metadata/_edit_lock_ = true
 
 [node name="Room-2_2" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-960, 540)
@@ -4326,7 +4342,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_2/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -4400,6 +4416,7 @@ z_index = -63
 z_as_relative = false
 position = Vector2(0, 67)
 mesh = SubResource("QuadMesh_rup4s")
+metadata/_edit_lock_ = true
 
 [node name="Room-1_2" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-480, 540)
@@ -4413,7 +4430,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_2/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -4513,6 +4530,7 @@ z_index = -63
 z_as_relative = false
 position = Vector2(0, 67)
 mesh = SubResource("QuadMesh_rup4s")
+metadata/_edit_lock_ = true
 
 [node name="Room-3_3" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-1440, 810)
@@ -4526,7 +4544,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -4539,7 +4557,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4552,7 +4570,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling3"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4565,7 +4583,7 @@ shape = SubResource("RectangleShape2D_wui3h")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling4"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 16)
 
@@ -4578,7 +4596,7 @@ shape = SubResource("RectangleShape2D_wui3h")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling5"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 16)
 
@@ -4591,7 +4609,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Ceiling2"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4608,7 +4626,7 @@ shape = SubResource("RectangleShape2D_qetcs")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Wall2"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_8lgfd")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 172, 16)
 
@@ -4622,7 +4640,7 @@ shape = SubResource("RectangleShape2D_gw1vw")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Wall5"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 102, 16)
 
@@ -4635,7 +4653,7 @@ shape = SubResource("RectangleShape2D_ygn2i")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Floor2"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_swu3i")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
@@ -4648,7 +4666,7 @@ shape = SubResource("RectangleShape2D_ygn2i")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-3_3/Floor3"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_swu3i")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
@@ -4664,7 +4682,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -4677,7 +4695,7 @@ shape = SubResource("RectangleShape2D_18clu")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_4wdv8")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -4690,7 +4708,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling3"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4703,7 +4721,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling6"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4716,7 +4734,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling4"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4729,7 +4747,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Ceiling5"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4743,7 +4761,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Wall4"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -4757,7 +4775,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Wall6"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -4771,7 +4789,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Wall7"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -4785,7 +4803,7 @@ shape = SubResource("RectangleShape2D_gw1vw")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-2_3/Wall5"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 102, 16)
 
@@ -4809,7 +4827,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -4822,7 +4840,7 @@ shape = SubResource("RectangleShape2D_18clu")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_4wdv8")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -4835,7 +4853,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling5"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4848,7 +4866,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling7"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4861,7 +4879,7 @@ shape = SubResource("RectangleShape2D_xiw03")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling8"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 108, 16)
 
@@ -4874,7 +4892,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Ceiling6"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -4888,7 +4906,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Wall6"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -4902,7 +4920,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Wall8"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -4916,7 +4934,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Wall7"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -4928,7 +4946,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_shehe")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Floor6"]
-texture = SubResource("CompressedTexture2D_l137e")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(72, 0, 72, 16)
 
@@ -4940,7 +4959,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_shehe")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Floor7"]
-texture = SubResource("CompressedTexture2D_l137e")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(72, 0, 72, 16)
 
@@ -4952,7 +4972,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_shehe")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-1_3/Floor8"]
-texture = SubResource("CompressedTexture2D_l137e")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(72, 0, 72, 16)
 
@@ -4963,6 +4984,7 @@ modulate = Color(0.129412, 0.129412, 0.137255, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_0nbtd")
+metadata/_edit_lock_ = true
 
 [node name="Room0_3" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(0, 810)
@@ -4976,7 +4998,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -4989,7 +5011,7 @@ shape = SubResource("RectangleShape2D_18clu")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Ceiling"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_4wdv8")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -5002,7 +5024,7 @@ shape = SubResource("RectangleShape2D_xullu")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Ceiling6"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -5016,7 +5038,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_1jxku")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Floor3"]
-texture = ExtResource("7_2lf6f")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5030,7 +5053,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Wall2"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -5044,7 +5067,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Wall3"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -5057,7 +5080,7 @@ shape = SubResource("RectangleShape2D_pwx6t")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Ceiling8"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 136, 16)
 
@@ -5069,7 +5092,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_shehe")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room0_3/Floor8"]
-texture = SubResource("CompressedTexture2D_l137e")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(72, 0, 72, 16)
 
@@ -5078,6 +5102,7 @@ modulate = Color(0.129412, 0.129412, 0.137255, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_0nbtd")
+metadata/_edit_lock_ = true
 
 [node name="Room1_3" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(480, 810)
@@ -5091,7 +5116,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -5104,7 +5129,7 @@ shape = SubResource("RectangleShape2D_18clu")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_4wdv8")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -5117,7 +5142,7 @@ shape = SubResource("RectangleShape2D_xiw03")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling8"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 108, 16)
 
@@ -5131,7 +5156,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Wall8"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -5144,7 +5169,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling7"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5157,7 +5182,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling10"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5170,7 +5195,7 @@ shape = SubResource("RectangleShape2D_tjdyg")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Ceiling9"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 272, 16)
 
@@ -5184,7 +5209,7 @@ shape = SubResource("RectangleShape2D_h5nhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Wall9"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 70, 16)
 
@@ -5198,7 +5223,7 @@ shape = SubResource("RectangleShape2D_0fl76")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room1_3/Wall10"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 148, 16)
 
@@ -5209,6 +5234,7 @@ modulate = Color(0.129412, 0.129412, 0.137255, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_0nbtd")
+metadata/_edit_lock_ = true
 
 [node name="Room2_3" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(960, 810)
@@ -5222,7 +5248,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room2_3/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -5235,7 +5261,7 @@ shape = SubResource("RectangleShape2D_18clu")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room2_3/Ceiling"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_4wdv8")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -5249,7 +5275,7 @@ shape = SubResource("RectangleShape2D_ntuqo")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room2_3/Wall"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 270, 16)
 
@@ -5272,7 +5298,7 @@ shape = SubResource("RectangleShape2D_ld7xo")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room2_3/Wall10"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 164, 16)
 
@@ -5291,7 +5317,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -5305,7 +5331,7 @@ shape = SubResource("RectangleShape2D_l4n3p")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Wall"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 172, 16)
 
@@ -5319,7 +5345,7 @@ shape = SubResource("RectangleShape2D_l4n3p")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Wall2"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 172, 16)
 
@@ -5333,7 +5359,7 @@ shape = SubResource("RectangleShape2D_fmmry")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Wall3"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 172, 200)
 
@@ -5347,7 +5373,7 @@ shape = SubResource("RectangleShape2D_fmmry")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Wall4"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 172, 200)
 
@@ -5360,7 +5386,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Ceiling"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5373,7 +5399,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Ceiling2"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5386,7 +5412,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Ceiling3"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5399,7 +5425,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_3/Ceiling4"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5411,7 +5437,7 @@ flipped = true
 position = Vector2(-1920, 540)
 
 [node name="Wall" type="StaticBody2D" parent="World/Room-4_2"]
-position = Vector2(232, 0)
+position = Vector2(232, -8)
 rotation = 1.5708
 collision_mask = 0
 
@@ -5422,10 +5448,10 @@ shape = SubResource("RectangleShape2D_ntuqo")
 texture_repeat = 2
 texture = SubResource("CompressedTexture2D_ca4ee")
 region_enabled = true
-region_rect = Rect2(0, 0, 270, 16)
+region_rect = Rect2(0, 0, 254, 16)
 
 [node name="Wall2" type="StaticBody2D" parent="World/Room-4_2"]
-position = Vector2(-232, 1)
+position = Vector2(-232, -7)
 rotation = 1.5708
 collision_mask = 0
 
@@ -5436,7 +5462,7 @@ shape = SubResource("RectangleShape2D_40xph")
 texture_repeat = 2
 texture = SubResource("CompressedTexture2D_8lgfd")
 region_enabled = true
-region_rect = Rect2(0, 0, 270, 16)
+region_rect = Rect2(0, 0, 254, 16)
 
 [node name="Floor" type="StaticBody2D" parent="World/Room-4_2"]
 position = Vector2(-136, 127)
@@ -5446,7 +5472,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_1jxku")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_2/Floor"]
-texture = ExtResource("7_2lf6f")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(208, 0, 208, 16)
 
@@ -5458,7 +5485,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_1jxku")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_2/Floor2"]
-texture = ExtResource("7_2lf6f")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(208, 0, 208, 16)
 
@@ -5467,6 +5495,7 @@ modulate = Color(0.343736, 0.184889, 0.139532, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_6oujy")
+metadata/_edit_lock_ = true
 
 [node name="Room-4_1" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-1920, 270)
@@ -5477,7 +5506,7 @@ rotation = 1.5708
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_1/Wall"]
-shape = SubResource("RectangleShape2D_26qbd")
+shape = SubResource("RectangleShape2D_rup4s")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_1/Wall"]
 texture_repeat = 2
@@ -5492,7 +5521,7 @@ rotation = 1.5708
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-4_1/Wall2"]
-shape = SubResource("RectangleShape2D_40xph")
+shape = SubResource("RectangleShape2D_4wdv8")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-4_1/Wall2"]
 texture_repeat = 2
@@ -5531,6 +5560,7 @@ modulate = Color(0.343736, 0.184889, 0.139532, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_6oujy")
+metadata/_edit_lock_ = true
 
 [node name="Room-5_3" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-2400, 810)
@@ -5544,7 +5574,7 @@ shape = SubResource("RectangleShape2D_6oujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Floor"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 16)
 
@@ -5557,7 +5587,7 @@ shape = SubResource("RectangleShape2D_optxr")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Floor2"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 280, 16)
 
@@ -5570,7 +5600,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Ceiling"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5583,7 +5613,7 @@ shape = SubResource("RectangleShape2D_nbuqd")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Ceiling3"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 172, 16)
 
@@ -5596,7 +5626,7 @@ shape = SubResource("RectangleShape2D_x28ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Ceiling2"]
 texture_repeat = 2
-texture = ExtResource("7_2lf6f")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 208, 16)
 
@@ -5610,7 +5640,7 @@ shape = SubResource("RectangleShape2D_40xph")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Wall"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_8lgfd")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 270, 16)
 
@@ -5624,7 +5654,7 @@ shape = SubResource("RectangleShape2D_l4n3p")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_3/Wall3"]
 texture_repeat = 2
-texture = SubResource("CompressedTexture2D_ca4ee")
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(0, 0, 172, 16)
 
@@ -5644,6 +5674,7 @@ modulate = Color(0.129412, 0.129412, 0.137255, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_0nbtd")
+metadata/_edit_lock_ = true
 
 [node name="Room-5_2" parent="World" instance=ExtResource("6_w7kh3")]
 position = Vector2(-2400, 540)
@@ -5656,7 +5687,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_1jxku")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Floor"]
-texture = ExtResource("7_2lf6f")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(208, 0, 208, 16)
 
@@ -5668,7 +5700,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_1jxku")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Floor2"]
-texture = ExtResource("7_2lf6f")
+texture_repeat = 2
+texture = ExtResource("23_37qwj")
 region_enabled = true
 region_rect = Rect2(208, 0, 208, 16)
 
@@ -5691,27 +5724,27 @@ rotation = 1.5708
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Wall"]
-shape = SubResource("RectangleShape2D_ntuqo")
+shape = SubResource("RectangleShape2D_navra")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Wall"]
 texture_repeat = 2
 texture = SubResource("CompressedTexture2D_ca4ee")
 region_enabled = true
-region_rect = Rect2(0, 0, 270, 16)
+region_rect = Rect2(0, 0, 238, 16)
 
 [node name="Wall2" type="StaticBody2D" parent="World/Room-5_2"]
-position = Vector2(-232, 1)
+position = Vector2(-232, 0)
 rotation = 1.5708
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room-5_2/Wall2"]
-shape = SubResource("RectangleShape2D_40xph")
+shape = SubResource("RectangleShape2D_37qwj")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Room-5_2/Wall2"]
 texture_repeat = 2
 texture = SubResource("CompressedTexture2D_8lgfd")
 region_enabled = true
-region_rect = Rect2(0, 0, 270, 16)
+region_rect = Rect2(0, 0, 238, 16)
 
 [node name="Floor3" type="StaticBody2D" parent="World/Room-5_2"]
 position = Vector2(0, 46)
@@ -5773,6 +5806,7 @@ modulate = Color(0.343736, 0.184889, 0.139532, 1)
 z_index = -128
 z_as_relative = false
 mesh = SubResource("QuadMesh_6oujy")
+metadata/_edit_lock_ = true
 
 [node name="Block6" parent="World/Room-5_2" instance=ExtResource("18_ts3gi")]
 position = Vector2(-192, 87)
