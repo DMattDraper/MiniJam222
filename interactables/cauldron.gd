@@ -31,7 +31,7 @@ func interact(item: Item) -> bool:
 	update_icons(item)
 	
 	if item_count == 5:
-		Statics.hud.update_message_text("You win!")
+		GameManager.win_game()
 	
 	return true
 

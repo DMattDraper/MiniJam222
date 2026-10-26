@@ -4,6 +4,7 @@ extends Node
 
 @onready var main_menu : MainMenu
 @onready var world : Node
+@onready var victory_screen : Node
 
 func die() -> void:
 	var behavior := Statics.world.current_room.cat_behavior
@@ -36,7 +37,8 @@ func start_game() -> void:
 	main.add_child(world)
 
 func win_game() -> void:
-	pass
+	main.remove_child(world)
+	main.add_child(victory_screen)
 
-func end_game() -> void:
-	pass
+func quit() -> void:
+	get_tree().quit()
